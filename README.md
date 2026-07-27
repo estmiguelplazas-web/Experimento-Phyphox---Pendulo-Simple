@@ -1,4 +1,4 @@
-                                           # Experimento-Phyphox---Pendulo-Simple
+# Experimento-Phyphox---Pendulo-Simple
 
 
                                                      Integrantes 
