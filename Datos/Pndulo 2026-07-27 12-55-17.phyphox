@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="UTF-8"?><phyphox version="1.14" locale="en">
+  <title>Pendulum</title>
+  <category>Mechanics</category>
+  <icon format="base64">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</icon>
+  <description>
+        Determine the gravity constant (g=9.81m/s²) by using your phone as a pendulum.
+
+        This experiment uses the gyroscope to measure the pendulum movement and calculates the oscillation period T. The user has to enter the length L of the string used for the pendulum, so phyphox can calculate g = 4π²L/T².
+
+        Alternatively, instead of measuring g, you can use the tab length and assume g = 9.81 m/s² to determine the length of the string from the pendulum motion. (Actually its the distance from the pivot point to the center of mass.)
+
+        Additionally, on the resonance tab, it plots the amplitude against the detected frequency. This way, you can construct a driven oscillator and change its frequency to measure a resonance curve.
+
+        Further details:
+        The oscillation period is obtained through the autocorrelation of the sum of all three gyroscope components. The autocorrelation is then analyzed for its first maximum for a first estimate and then the last maximum of the autocorrelation is used to get a more precise result.
+    </description>
+  <link label="Wiki">http://phyphox.org/wiki/index.php?title=Experiment:_Pendulum</link>
+  <link label="x / y / z">http://phyphox.org/sensors/</link>
+  <link label="Video" highlight="true">https://youtu.be/xY3NFcDG3ZU</link>
+  <translations>
+    <translation locale="de">
+      <title>Fadenpendel</title>
+      <category>Mechanik</category>
+      <description>
+        Misst die Erdbeschleunigung (g=9.81m/s²) indem das Smartphone als Pendel benutzt wird.
+
+                Dieses Experiment nutzt das Gyroskop um die Pendelbewegung zu erfassen und berechnet hieraus die Schwingungsperiode T. Der Nutzer muss die Länge des Pendels eingeben, so dass phyphox g = 4π²L/T² berechnen kann.
+
+                Alternativ kann man auf der Seite "Länge" statt g zu messen annehmen, dass g = 9.81 m/s² und somit aus der Pendelbewegung die Länge des Pendels bestimmen. (Genau genommen ist dies die Entfernung des Drehpunkts zum Schwerpunkt des Pendels.)
+
+                Außerdem wird auf der Resonanz-Seite die Amplitude der Schwingung gegen die ermittelte Frequenz geplottet. Auf diese Weise kannst du ein getriebenes Pendel (erzwungene Schwingung) bauen und durch verstellend er Frequenz die Resonanz ausmessen.
+
+                Weitere Details:
+                Die Schwingungsperiode wird durch eine Autokorrelation der Summe der drei Komponenten des Gyroskops ermittelt. Im Ergebnis der Autokorrelation wird dann nach dem ersten Maximum gesucht, die als erste Schätzung der Frequenz genutzt wird. Die genaue Frequenz folgt dann aus dem letzten Maximum der berechneten Autokorrelation.
+    </description>
+      <string original="Period">Periode</string>
+      <string original="Frequency">Frequenz</string>
+      <string original="Resonance">Resonanz</string>
+      <string original="Length">Länge</string>
+      <string original="Autocorrelation">Autokorrelation</string>
+      <string original="Raw Data">Rohdaten</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Hier kannst du die Länge deines Pendels (vom Drehpunkt zum Schwerpunkt) eingeben und darüber die Erdbeschleunigung g bestimmen.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Hier kannst du die Länge deines Pendels (vom Drehpunkt zum Schwerpunkt) bestimmen unter der Annahme g = 9.81 m/s².</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">Auf dieser Seite wird die Amplitude gegen die ermittelte Frequenz aufgetragen. Du kannst hiermit die Resonanz eines getriebenen Pendels ausmessen. Die Amplitude wird auf den Bereich 0 bis 1 normiert.</string>
+      <link label="x / y / z">http://phyphox.org/de/unterstutzte-sensoren/</link>
+      <link label="Video" highlight="true">https://youtu.be/q3_m1JW1ttQ</link>
+      <string original="Results">Ergebnisse</string>
+      <string original="Gyroscope x">Gyroskop x</string>
+      <string original="Gyroscope y">Gyroskop y</string>
+      <string original="Gyroscope z">Gyroskop z</string>
+      <string original="Rel. amplitude">Rel. Amplitude</string>
+      <string original="correlation">Korrelation</string>
+    </translation>
+    <translation locale="cs">
+      <title>Kyvadlo</title>
+      <category>Mechanika</category>
+      <description>
+        Změří hodnotu tíhového zrychlení (g=9.81m/s²) pomocí kyvadla vyrobeného z vašeho mobilního telefonu.
+
+Tento experiment používá gyroskop k měření pohybu kyvadla a vypočítá jeho periodu kmitu T. Uživatel musí zadat délku L použitého závěsu, aby phyphox mohl vypočítat g = 4π²/T² L.
+
+Druhou možností, jak experiment provádět, je namísto měření g nechat vypočítat délku závěsu z pohybu kyvadla (přesněji řečeno vzdálenost od bodu zavěšení k těžišti). Pro tyto výpočty se pak předpokládá že g = 9.81 m/s².
+
+V záložce rezonance je dále graf závislosti amplitudy na zjištěné frekvenci kmitů. Změnami frekvence je zde možno změřit rezonanční křivku buzeného oscilátoru.
+    
+Další detaily:
+Perioda kmitání je získána autokorelací součtu všech složek zrychlení. První maximum autokorelace je použito k prvotnímu odhadu hodnoty a ten je pak zpřesněn pomocí posledního maxima autokorelace.
+    </description>
+      <string original="Results">Výsledky</string>
+      <string original="Period">Perioda</string>
+      <string original="Frequency">Frekvence</string>
+      <string original="Length">Délka</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Zde můžete zadat délku svého kyvadla (od bodu závěsu k těžišti) a zjistit tak tíhové zrychlení g.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Zde můžete určit délku vašeho kyvadla (od závěsu k těžišti) za předpokladu, že g = 9.81 m/s².</string>
+      <string original="Resonance">Rezonance</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">V této záložce je amplituda vynesena v závislosti na zjištěné frekvenci. Můžete tak měřit rezonanci buzeného oscilátoru. Amplituda je normována na rozsah 0 až 1.</string>
+      <string original="Autocorrelation">Autokorelace</string>
+      <string original="Raw Data">Neupravená data</string>
+      <string original="Gyroscope x">Gyroskop x</string>
+      <string original="Gyroscope y">Gyroskop y</string>
+      <string original="Gyroscope z">Gyroskop z</string>
+      <string original="Rel. amplitude">Rel. amplituda</string>
+      <string original="correlation">korelace</string>
+    </translation>
+    <translation locale="pl">
+      <title>Wahadło</title>
+      <category>Mechanika</category>
+      <description>
+        Wyznacz wartość przyspieszenia grawitacyjnego za pomocą smartfonu jako wahadła.
+
+        W tym eksperymencie wykorzystywany jest żyroskop do pomiaru ruchu wahadła i wyznaczenia okresu jego drgań T. Użytkownik musi wprowadzić długość L nici wahadła, by phyphox obliczył wartość przyspieszenia grawitacyjnego korzystając z formuły g = 4π²/T² L.
+
+        Alternatywnie, zamiast wyznaczać wartość g, możliwe jest skorzystanie z zakładki 'Długość' i wyznaczenie nieznanej długości poruszającego się wahadła przy założeniu, że g = 9.81 m/s². (W rzeczywistości określana jest odległość między punktem zaczepienia wahadła a środkiem masy poruszającego się urządzenia.)
+
+        Dodatkowo, korzystając zakładki 'Rezonans', można obserwować zależność amplitudy jako funkcji częstotliwości. W ten sposób można zbudować wahadło z siłą wymuszającą i zarejestrować krzywą rezonansową.
+
+        Dodatkowe szczegóły:
+        Okres drgań jest wyznaczany z wykorzystaniem procedury autokorelacji trzech składowych czujnika żyroskopowego. Następnie zależność autokorelacji jest analizowana w celu wyznaczenia pierwszego maksimum, a ostatnie maksimum jest wykorzystywane do poprawy dokładności obliczeń.
+    </description>
+      <string original="Results">Rezultaty</string>
+      <string original="Period">Okres</string>
+      <string original="Frequency">Częstotliwość</string>
+      <string original="Length">Długość</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">W tym miejscu należy wprowadzić długość wahadła (od punktu zaczepienia do środka masy), by z jego pomocą wyznaczyć wartość ziemskiego przyspieszenia grawitacyjnego g.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">W tym miejscu, można wyznaczyć nieznaną długość wahadła (odległość od punktu zaczepienia do środka masy) zakładając, że g = 9.81 m/s².</string>
+      <string original="Resonance">Rezonans</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">W tej zakładce wizualizowana jest zależność apmlitudy drgań od ich częstotliwości. Zależność ta może zostać wykorzystana do badania wahadła z siłą wymuszającą. Amplituda jest znormalizowana (względna) i jej wartość zawiera się w przedziale od 0 do 1.</string>
+      <string original="Autocorrelation">Autokorelacja</string>
+      <string original="Raw Data">Surowe dane</string>
+      <string original="Gyroscope x">Żyroskop - składowa x</string>
+      <string original="Gyroscope y">Żyroskop - składowa y</string>
+      <string original="Gyroscope z">Żyroskop - składowa z</string>
+      <string original="Rel. amplitude">Amplituda odniesienia</string>
+      <string original="correlation">Korelacja</string>
+    </translation>
+    <translation locale="nl">
+      <title>Slinger</title>
+      <category>Mechanica</category>
+      <description>
+        Bepaal de zwaarteveldsterte (g = 9,81 m / s²) door uw telefoon als slinger te gebruiken.
+
+        In dit experiment wordt de gyroscoopsensor gebruikt om periode T van de slingerbeweging T te berekenen. De gebruiker moet de slingerlengte L invoeren, zodat phyphox g = 4π² / T² L kan berekenen.
+
+        Via menukeuze 'Lengte' kunt u g = 9,81 m / s² gebruiken om de lengte van de slinger (eigenlijk de afstand van het draaipunt naar het massamiddelpunt.)
+
+        Op menukeuze 'Resonantie' krijg je een grafiek met amplitude af tegenover gemeten frequentie. Op deze manier kun je een gedwongen trilling starten en de frequentie ervan wijzigen om een resonantiecurve te verkrijgen.
+
+        Verdere details:
+        De oscillatieperiode wordt verkregen door de autocorrelatie van de som van alle drie de gyroscoopcomponenten. De autocorrelatie wordt vervolgens geanalyseerd op het eerste maximum voor een eerste schatting en vervolgens wordt het laatste maximum van de autocorrelatie gebruikt om een nauwkeuriger resultaat te verkrijgen.
+    </description>
+      <string original="Results">Resultaten</string>
+      <string original="Period">Periode</string>
+      <string original="Frequency">Frequentie</string>
+      <string original="Length">Lengte</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Hier kunt u de lengte van de slinger invoeren (draaipunt tot middelpunt van massa) en de zwaarteveldsterkte of valversnelling g van de aarde bepalen.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Hier kunt u, uit g = 9.81 m/s², de lengte van de slinger bepalen (draaipunt tot middelpunt van massa).</string>
+      <string original="Resonance">Resonantie</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">Op dit tabblad wordt de amplitude uitgezet tegen de gemeten frequentie. Je kunt dit gebruiken om de resonantie van een gedwongen oscillator te bestuderen. De amplitude is genormaliseerd op een bereik van 0 tot 1.</string>
+      <string original="Autocorrelation">Autocorrelatie</string>
+      <string original="Raw Data">Onbewerkte data</string>
+      <string original="Gyroscope x">Gyroscoop x</string>
+      <string original="Gyroscope y">Gyroscoop y</string>
+      <string original="Gyroscope z">Gyroscoop z</string>
+      <string original="correlation">correlatie</string>
+    </translation>
+    <translation locale="ru">
+      <title>Маятник</title>
+      <category>Механика</category>
+      <description>
+        Определите величину ускорения свободного падения (g = 9,81 м/с²), используя ваш телефон в качестве маятника.
+
+       Этот эксперимент использует гироскоп для измерения движения маятника и вычисляет период колебаний T. Пользователь должен ввести длину L шнура, используемого для маятника, чтобы phyphox мог рассчитать g = 4π²L/T².
+
+       В качестве альтернативы вместо измерения g вы можете использовать меню «Длина» и принимая g = 9,81 м/с² определить длину шнура из движения маятника. (Фактически это расстояние от точки поворота до центра масс.)
+
+       Кроме того, через меню «Резонанс» можно отобразить амплитуду по обнаруженной частоте. Таким образом, вы можете создать вынужденные колебания осциллятора и изменить его частоту для измерения резонанса.
+
+       Дальнейшие подробности:
+       Период колебаний получается через автокорреляцию суммы всех трех компонентов гироскопа. Затем автокорреляция анализируется по первому максимуму для первичной оценки, а последний максимум автокорреляции используется для получения более точного результата.
+    </description>
+      <string original="Results">Результаты</string>
+      <string original="Period">Период</string>
+      <string original="Frequency">Частота</string>
+      <string original="Length">Длина</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Здесь вы можете ввести длину маятника (от точки поворота до центра масс) и определить ускорение свободного падения на земле g.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Здесь вы можете определить длину маятника (точка поворота до центра масс), предполагая g = 9,81 м/с².</string>
+      <string original="Resonance">Резонанс</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">На этом регистре амплитуда отображается на фоне измеренной частоты. Вы можете использовать эту функцию для измерения резонанса вынужденных колебаний осциллятора. Амплитуда нормируется в диапазоне от 0 до 1.</string>
+      <string original="Autocorrelation">Автокорреляция</string>
+      <string original="Raw Data">Исходные данные</string>
+      <string original="Gyroscope x">Гироскоп x</string>
+      <string original="Gyroscope y">Гироскоп y</string>
+      <string original="Gyroscope z">Гироскоп z</string>
+      <string original="Rel. amplitude">Отн. амплитуда</string>
+      <string original="correlation">корреляция</string>
+    </translation>
+    <translation locale="it">
+      <title>Pendolo</title>
+      <category>Meccanica</category>
+      <description>
+        Determina l'accelerazione di gravità (g=9.81m/s²) usando il tuo telefono come un pendolo.
+
+        Questo esperimento usa il giroscopio per misurare il movimento del pendolo e calcola il periodo di oscillazione T. Devi selezionare la lunghezza L della corda usata per il pendolo, così phyphox potrà calcolare g = 4π²/T² L.
+
+        In alternativa, invece di misurare g, puoi andare sulla sezione "lunghezza" e considerare g = 9.81 m/s² per determinare la lunghezza della corda dal movimento del pendolo. (L è la distanza dal punto di rotazione al centro di massa.)
+
+        Inoltre, nella sezione "risonanza", traccia l'ampiezza in funzione della frequenza rilevata. In questo modo puoi costruire un oscillatore forzato e modificarne la frequenza per misurare una curva di risonanza.
+
+        Ulteriori dettagli:
+        Il periodo di oscillazione è ottenuto attraverso il modulo quadro della somma delle tre componenti del giroscopio. La prima parte delle misure si usa per fare una prima stima; l'ultima parte per ottenere un risultato più preciso.
+    </description>
+      <string original="Period">Periodo</string>
+      <string original="Frequency">Frequenza</string>
+      <string original="Length">Lunghezza</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Qui puoi selezionare la lunghezza del tuo pendolo (dal punto di rotazione al centro di massa) per determinare l'accelerazione g della Terra.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Qui puoi determinare la lunghezza del tuo pendolo (dal punto di rotazione al centro di massa) considerando che g = 9.81 m/s².</string>
+      <string original="Resonance">Risonanza</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">In questa sezione, si fa un grafico dell'ampiezza in funzione della frequenza rilevata. Puoi usarla per misurare la risonanza di un oscillatore forzato. L'ampiezza è normalizzata su un intervallo da 0 a 1.</string>
+      <string original="Autocorrelation">Autocorrelazione</string>
+      <string original="Raw Data">Dati grezzi</string>
+      <string original="Gyroscope x">Giroscopio x</string>
+      <string original="Gyroscope y">Giroscopio y</string>
+      <string original="Gyroscope z">Giroscopio z</string>
+      <string original="Rel. amplitude">Amp. relativa</string>
+      <string original="correlation">correlazione</string>
+    </translation>
+    <translation locale="el">
+      <title>Εκκρεμές</title>
+      <category>Μηχανική</category>
+      <description>
+        Υπολογισμός της επιτάχυνσης της βαρύτητας (g=9.81m/s²) μετατρέποντας το κινητό σε εκκρεμές.
+
+        Το πείραμα χρησιμοποιεί το γυροσκόπιο για να μετρήσει την κίνηση του εκκρεμούς και υπολογίζει την περίοδο ταλάντωσης Τ. Ο χρήστης αρκεί να εισάγει το μήκος Λ του νήματος που χρησιμοποιείται για το εκκρεμές, ώστε η εφαρμογή να υπολογίσει το g από τον τύπο: g = 4π²L/T².
+
+        Εναλλακτικά, αντί για την μέτρηση του g, μπορείτε να χρησιμοποιείστε την καρτέλα "μήκος" και υποθέτοντας g = 9.81 m/s² να βρείτε το μήκος του νήματος από την κίνηση του εκκρεμούς. (Στην πραγματικότητα πρόκειται για την απόσταση από το σημείο στήριξης μέχρι το κέντρο μάζας).
+
+        Επιπρόσθετα, στην καρτέλα "συντονισμός" , σχεδιάζει το πλάτος σαν συνάρτηση της μετρούμενης συχνότητας. Μ' αυτό τον τρόπο μπορείτε να κατασκευάσετε ένα σύστημα εξαναγκασμένης ταλάντωσης και αλλάζοντας τη συχνότητα να κατασκευάσετε μια καμπύλη συντονισμού.
+
+        Παραπάνω πληροφορίες:
+        Η περίοδος ταλάντωσης υπολογίζετε από την αυτοσυσχέτιση (autocorrelation) του αθροίσματος των τριών συνιστωσών του γυροσκοπίου. Η αυτοσυσχέτιση στη συνέχεια αναλύεται για το πρώτο της μέγιστο για μια πρώτη εκτίμηση και στη συνέχεια το τελευταίο μέγιστο χρησιμοποιείται για την εύρεση ακριβέστερου αποτελέσματος.
+    </description>
+      <string original="Results">Αποτελέσματα</string>
+      <string original="Period">Περίοδος</string>
+      <string original="Frequency">Συχνότητα</string>
+      <string original="Length">Μήκος</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Εδώ μπορείτε να εισάγετε το μήκος του εκκρεμούς (από το σημείο στήριξης έως το κέντρο μάζας) και να υπολογίσετε την επιτάχυνση της βαρύτητας g.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Εδώ μπορείτε να υπολογίσετε το μήκος του εκκρεμούς (από το σημείο στήριξης έως το κέντρο μάζας) θεωρώντας g = 9.81 m/s² .</string>
+      <string original="Resonance">Συντονισμός</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">Σε αυτή την καρτέλα, το πλάτος σχεδιάζεται σε συνάρτηση με την υπολογιζόμενη συχνότητα. Μπορείτε έτσι να βρείτε τη συχνότητα συντονισμού σε μια εξαναγκασμένη ταλάντωση. Το πλάτος κανονικοποιείται σε μια κλίμακα από 0 έως 1.</string>
+      <string original="Autocorrelation">Αυτοσυσχέτιση</string>
+      <string original="Raw Data">Καταγραφές Αισθητήρα</string>
+      <string original="Gyroscope x">Γυροσκόπιο x</string>
+      <string original="Gyroscope y">Γυροσκόπιο y</string>
+      <string original="Gyroscope z">Γυροσκόπιο z</string>
+      <string original="Rel. amplitude">Σχετ. πλάτος</string>
+      <string original="correlation">συσχέτιση</string>
+    </translation>
+    <translation locale="ja">
+      <title>振り子</title>
+      <category>力学・運動</category>
+      <description>
+        スマートフォンを振り子として使うことによる重力加速度 (g=9.81m/s²) の特定．
+
+本実験では，振り子の動きを測定するためにジャイロスコープを用いその振動周期 Tを計算します．振り子に利用する糸の長さLを入力する必要があります． phyphoxはg = 4π²/T² Lを計算します．
+
+タブメニューの「長さ」では，加速度gを計算する代わりに，g = 9.81 m/s²と仮定し，振り子の動きから糸の長さを特定することができます．(実際はピボット点から物体の中心までの距離です．)
+
+「共振」タブメニューでは，振幅を周波数に対しプロットします．これにより，外部加振された物体の共振特性曲線を周波数に対して得ることができ，共振特性曲線を示すことができます．
+
+周波数の決定方法
+ジャイロスコープ成分の総和の自己相関を計算し振動周期を計算することで振動周波数を決定します．自己相関の第一極大から周期を概算し，その整数倍付近の極大のうち，観測できた最終極大値を用いて振動周期を決定します．
+    </description>
+      <string original="Results">結果</string>
+      <string original="Period">周期</string>
+      <string original="Frequency">周波数</string>
+      <string original="Length">長さ</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">ここで，お持ちの振り子の長さ(物体の中心からピボット点まで)を入力し重力加速度gを特定することができます．</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">ここでg = 9.81 m/s²を仮定することで(物体の中心からピボット点まで)振り子の長さを特定することができます．</string>
+      <string original="Resonance">共振</string>
+      <string original="Rel. amplitude">相対振幅</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">このタブでは，検知した周波数に対して振幅がプロットされます．駆動する発振器の共振周波数を測定するために使用可能です．振幅は0から1の範囲において規格化されます．</string>
+      <string original="Autocorrelation">自己相関</string>
+      <string original="correlation">相関係数</string>
+      <string original="Raw Data">センサー出力</string>
+      <string original="Gyroscope x">ジャイロスコープ x</string>
+      <string original="Gyroscope y">ジャイロスコープ y</string>
+      <string original="Gyroscope z">ジャイロスコープ　z</string>
+    </translation>
+    <translation locale="pt">
+      <title>Pêndulo</title>
+      <category>Mecânica</category>
+      <description>
+        Determina a aceleração da gravidade (g=9.81m/s²) usando o seu aparelho como um pêndulo.
+
+        Este experimento usa o giroscópio para medir o movimento pendular e calcula o período de oscilação T. É necessário que seja dado o comprimento L do pêndulo para que o phyphox possa calcular g = 4π²/T² L.
+
+        Uma outra opção é usar a aba comprimento e assumir g= 9.81 m/s² para determinar o comprimento do fio do pêndulo através do mesmo processo. Na prática, o resultado é o comprimento do ponto pivô ao centro de massa.
+
+        Na aba de ressonância é dado o gráfico da amplitude contra a frequência detectada. Desta maneira, você pode construir um oscilador forçado e mudar a frequência para medir uma curva de ressonância.
+
+        Outros detalhes:
+        O período de oscilação é obtido usando a autocorrelação da soma dos 3 componentes do giroscópio. A autocorrelação é analisada usando o primeiro máximo para a primeira estimativa e o último máximo para um resultado mais preciso.
+    </description>
+      <string original="Results">Resultados</string>
+      <string original="Period">Período</string>
+      <string original="Frequency">Frequência</string>
+      <string original="Length">Comprimento</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Aqui você deve colocar o comprimento do pêndulo (ponto pivô ao cetro de massa) para determinar a aceleração da gravidade g.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Use este experimento para determinar o comprimento do seu pêndulo (ponto pivô ao centro de massa) supondo g = 9.81 m/s².</string>
+      <string original="Resonance">Ressonância</string>
+      <string original="Rel. amplitude">Amplitude Relat</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">Nesta aba, a amplitude é plotada contra a frequência. Você pode utilizar isto para medir a ressonância de um oscilador forçado. A amplitude é normalizada entre 0 e 1.</string>
+      <string original="Autocorrelation">Autocorrelação</string>
+      <string original="correlation">correlação</string>
+      <string original="Raw Data">Sensores</string>
+      <string original="Gyroscope x">Giroscópio x</string>
+      <string original="Gyroscope y">Giroscópio y</string>
+      <string original="Gyroscope z">Giroscópio z</string>
+    </translation>
+    <translation locale="tr">
+      <title>Sarkaç</title>
+      <category>Mekanik</category>
+      <description>
+        Telefonunuzu sarkaç olarak kullanarak yerçekimi sabitini (g = 9.81m / s²) belirleyin.
+
+Bu deney, sarkaç hareketini ve salınım periyodunu (T) hesaplamak için jiroskopu kullanır. Kullanıcı sarkaç için kullanılan ipin L uzunluğunu girmelidir, böylece phyphox g = 4π² / T² L'yi hesaplayabilir.
+
+Alternatif olarak, g'yi ölçmek yerine, sekme uzunluğunu kullanabilir ve sarkaç hareketinden ipin uzunluğunu belirlemek için g = 9.81 m / s² olduğunu varsayabilirsiniz. (Aslında pivot noktasından kütle merkezine olan uzaklığı.)
+
+Ek olarak, rezonans sekmesi, tespit edilen frekansa göre genliği gösterir. Bu şekilde, etkin bir osilatör oluşturabilir ve rezonans eğrisini ölçmek için frekansını değiştirebilirsiniz.
+
+Daha fazla ayrıntı:
+Salınım periyodu, üç jiroskop bileşeninin toplamının otokorelasyonuyla elde edilir. Otokorelasyon daha sonra ilk tahmin için ilk maksimum değeri analiz eder ve sonra daha hassas bir sonuç elde etmek için otokorelasyonun son maksimum değeri kullanılır.
+    </description>
+      <string original="Results">Sonuçlar</string>
+      <string original="Period">Periyot</string>
+      <string original="Frequency">Frekans</string>
+      <string original="Length">Uzunluk</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Burada, sarkacınızın uzunluğunu (pivot noktasından kütle merkezine) girebilir ve Dünya'nın ivmesini g olarak belirleyebilirsiniz.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Burada, sarkacınızın uzunluğunu yerçekimi ivmesini g = 9.81 m / s² olarak kabul ederek (pivot noktasından kütle merkezine) hesaplayabilirsiniz.</string>
+      <string original="Resonance">Rezonans</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">Bu sekmede, genlik tespit edilen frekansa göre çizilir.  Sürülü osilatörün rezonansını ölçmek için bunu kullanabilirsiniz. Genlik 0'dan 1'e normalize edilir.</string>
+      <string original="Autocorrelation">Otokorelasyon</string>
+      <string original="correlation">bağıntı</string>
+      <string original="Raw Data">Ham veri</string>
+      <string original="Gyroscope x">Jiroskop x</string>
+      <string original="Gyroscope y">Jiroskop y</string>
+      <string original="Gyroscope z">Jiroskop z</string>
+    </translation>
+    <translation locale="zh_Hant">
+      <title>擺</title>
+      <category>力學</category>
+      <description>
+        透過將你的手機當成複擺以決定重力常數 (g=9.81m/s²)。
+
+	本實驗利用陀螺儀測量擺的移動狀態並計算擺動週期 T 。使用者必須輸入擺長L，由此一來phyphox可以測量 g = 4π²/T² L。
+
+	或者你如果不想測量g的話，你可以利用吊衣鉤並假設 g = 9.81 m/s² 並利用複擺的週期測得繩子的長度（實際上此距離是垂釣點至質心的距離）。
+
+	除此之外，在共振分頁，它會繪製振幅對頻率的作圖。如此一來，你可以製造一個振動器並調整其頻率以測得共振曲線。
+
+	更多細節：
+	振動週期透過陀螺儀的三個分量的總和的自相關性得知。分析第一個峰值與第一個估計值得自相關的程度，並透過最後一個峰值的自相關得更精確的結果。
+    </description>
+      <string original="Results">結果</string>
+      <string original="Period">週期</string>
+      <string original="Frequency">頻率</string>
+      <string original="Length">擺長</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">在此輸入擺長（懸點至質心）以測得地球的重力加速度 g。</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">在此假設 g = 9.81 m/s² ，即可求得擺長（懸點至質心）。</string>
+      <string original="Resonance">共振</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">這個分頁中顯示振幅對測得的頻率的作圖。你可以用此量測一個振盪器的共振頻率。振幅已歸一化成0至1。</string>
+      <string original="Autocorrelation">自相關</string>
+      <string original="Raw Data">原始數據</string>
+      <string original="Gyroscope x">x方向陀螺儀</string>
+      <string original="Gyroscope y">y方向陀螺儀</string>
+      <string original="Gyroscope z">z方向陀螺儀</string>
+    </translation>
+    <translation locale="fr">
+      <title>Pendule</title>
+      <category>Mécanique</category>
+      <description>
+        Détermine la constante de gravité (g = 9,81m/s²) en utilisant votre téléphone comme pendule.
+
+        Cette expérience utilise le gyroscope pour mesurer le mouvement du pendule et déterminer la période d'oscillation T. L'utilisateur doit entrer la longueur L de la corde utilisée, et g est calculé à partir de la formule g = 4π²L/T² .
+
+        Dans l’onglet « longueur », on pose g = 9,81 m/s² pour calculer la longueur de la corde à partir des mesures et de cette même formule. (Il s'agit en fait de la distance entre le pivot et le centre de masse.)
+
+        Dans l'onglet « résonance », l'amplitude des oscillations est tracée en fonction de la fréquence. Cela permet de tracer une courbe de résonance dans le cas d'un système à oscillations forcées. 
+
+        Plus précisément :
+        La période d'oscillation est obtenue à partir de l'autocorrélation de la somme des trois composantes du gyroscope. L’autocorrélation de cette quantité est analysée en cherchant son premier maximum pour obtenir une première estimation, puis son dernier maximum pour obtenir un résultat plus précis.
+    </description>
+      <string original="Results">Résultats</string>
+      <string original="Period">Période</string>
+      <string original="Frequency">Fréquence</string>
+      <string original="Length">Longueur</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Entrez la longueur du pendule (distance entre le point de pivot et le centre de masse) pour déterminer l'accélération de la pesanteur terrestre g.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Cette expérience détermine la longueur du pendule (distance entre le pivot et le centre de masse) à partir de la valeur de g = 9,81 m/s².</string>
+      <string original="Resonance">Résonance</string>
+      <string original="Rel. amplitude">Amplitude rel.</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">Dans cet onglet, l'amplitude est tracée en fonction de la fréquence mesurée. Cela permet de tracer la courbe de résonnance d’un pendule en oscillations forcées. L'amplitude est normalisée de 0 à 1.</string>
+      <string original="Autocorrelation">Autocorrélation</string>
+      <string original="correlation">corrélation</string>
+      <string original="Raw Data">Données brutes</string>
+      <string original="Gyroscope x">Gyroscope axe x</string>
+      <string original="Gyroscope y">Gyroscope axe y</string>
+      <string original="Gyroscope z">Gyroscope axe z</string>
+    </translation>
+    <translation locale="vi">
+      <title>Con lắc đơn</title>
+      <category>Cơ học</category>
+      <description>
+        Xác định gia tốc rơi tự do (g = 9.81m/s²) bằng cách dùng điện thoại và con lắc đơn. 
+
+        Thí nghiệm này dùng con quay hồi chuyển để đo chuyển động của con lắc và tính toán chu kỳ dao động T. Người dùng phải nhập vào chiều dài L của sợi dây làm con lắc đơn, từ đó phyphox có thể tính g = 4π²/T²L.
+
+        Tương tự, thay vì đo gia tốc g, bạn có thể sử dụng mục chiều dài và giả sử g = 9.81 m/s² để xác định chiều dài sợi dây của con lắc đơn. (đúng hơn là khoảng cách từ điểm treo đến tâm khối.)
+
+        Thêm vào đó, trong mục cộng hưởng, phần mềm vẽ đồ thị biên độ và tần số đã chọn. Theo cách này, bạn có thể tạo một dao động cưỡng bức và thay đổi tần số để đo đường cộng hưởng.
+
+        Thông tin chi tiết thêm:
+        Chu kỳ dao động được lấy qua dữ liệu của ba con quay hồi chuyển thành phần. Sự tương quan giữa chúng sau đó được phân tích để có biên độ cực đại đầu tiên dùng cho ước tính đầu tiên và biên độ cực đại cuối cùng của sự tương quan chéo được sử dụng để có kết quả chính xác hơn.
+    </description>
+      <string original="Results">Kết quả</string>
+      <string original="Period">Chu kỳ</string>
+      <string original="Frequency">Tần số</string>
+      <string original="Length">Chiều dài</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Tại đây, bạn có thể nhập chiều dài của con lắc của bạn (điểm xoay đến tâm khối) và xác định gia tốc của Trái Đất g.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Tại đây, bạn có thể xác định chiều dài của con lắc của bạn (điểm xoay đến tâm khối) giả sử g = 9,81 m/s².</string>
+      <string original="Resonance">Cộng hưởng</string>
+      <string original="Rel. amplitude">Biên độ</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">Trên mục này, biên độ được vẽ theo tần số được phát hiện. Bạn có thể sử dụng điều này để đo cộng hưởng của bộ dao động cưỡng bức. Biên độ được chuẩn hóa thành phạm vi từ 0 đến 1.</string>
+      <string original="Autocorrelation">Tự tương quan</string>
+      <string original="correlation">tương quan</string>
+      <string original="Raw Data">Dữ liệu thô</string>
+      <string original="Gyroscope x">Con quay hồi chuyển x</string>
+      <string original="Gyroscope y">Con quay hồi chuyển y</string>
+      <string original="Gyroscope z">Con quay hồi chuyển z</string>
+    </translation>
+    <translation locale="zh_Hans">
+      <title>摆</title>
+      <category>力学</category>
+      <description>
+        通过将你的手机当作摆来确定重力常数（g=9.81m/s²）。
+
+        本实验使用陀螺仪来测量摆的运动并计算振荡周期T。使用者必须输入摆使用的绳长，这样Phyphox能够测得g = 4π²/T² L。
+
+        或者，不想测量g时，你可以利用长度页面并假设 g = 9.81 m/s² ，通过摆的运动来确定绳长（实际上为支点到质心的距离）。
+
+        此外，在“共振”页面上，以振幅与测得频率之比作图。这样你就能构造一个振子并改变其频率来测量共振曲线。
+
+        更多细节:
+        振荡周期是通过三个陀螺仪分量总和的自相关获得。分析自相关系数的第一个峰值，进行第一次估计。然后自相关系数的最后一个峰值可以用来获得更精确的结果。
+    </description>
+      <string original="Results">结果</string>
+      <string original="Period">周期</string>
+      <string original="Frequency">频率</string>
+      <string original="Length">摆长</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">此处你可以输入你的摆长（支点到质心）来确定地球加速度g。</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">此处你可以假设 g = 9.81 m/s²来确定你的摆长（支点到质心）。</string>
+      <string original="Resonance">共振</string>
+      <string original="Rel. amplitude">相对振幅</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">此页面中，以振幅与测得频率之比作图。你可以借此来测量一个振子的共振。振幅已归一化到0至1范围。</string>
+      <string original="Autocorrelation">自相关</string>
+      <string original="correlation">相关系数</string>
+      <string original="Raw Data">原始数据</string>
+      <string original="Gyroscope x">x方向陀螺仪</string>
+      <string original="Gyroscope y">y方向陀螺仪</string>
+      <string original="Gyroscope z">z方向陀螺仪</string>
+    </translation>
+    <translation locale="sr">
+      <title>Klatno</title>
+      <category>Mehanika</category>
+      <description>
+        Odredite gravitacionu konstantu (g=9.81m/s²) koristeći telefon kao klatno.
+        Ovaj eksperiment koristi žiroskop da izmeri kretanje klatna i izračuna period oscilacije T. Korisnik mora uneti dužinu kanapa koji se koristi za klatno L, da bi Phyphox mogao izračunati g = 4π²/T² L.
+
+        Druga opcija vam je da umesto merenja g, koristite opciju dužina i pretpostavite da je g = 9.81 m/s² te da odredite dužinu kanapa iz kretanja klatna. (To je ustvari razdaljina od tačke vešanja do centra mase.)
+        Dodatno, u kartici rezonancija, ucrtava se amplituda po detektovanoj frekvenciji. Na ovaj način, možete konstruisati automatski oscilator i menjati njegovu frekvenciju da meri rezonancionu krivu.
+
+        Više detalja:
+        Period oscilacije se dobija kroz autokorelaciju zbira sve tri komponente žiroskopa. Autokorelacija se onda analizira za njen prvi maksimum za prvu procenu, a onda se poslednji maksimum autokorelacije koristi za precizniji rezultat.
+    </description>
+      <string original="Results">Rezultati</string>
+      <string original="Frequency">Frekvencija</string>
+      <string original="Length">Dužina</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Ovde, možete uneti dužinu vašeg klatna (od težišta do centra mase) i određuje Zemljino ubrzanje g.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Ovde, možete odrediti dužinu Vašeg klatna (od težišta do centra mase) pretpostavljate g = 9.81 m/s².</string>
+      <string original="Resonance">Rezonancija</string>
+      <string original="Rel. amplitude">Rel. amplituda</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">U ovoj kartici, amplituda je ucrtana po očitanoj frekvenciji. Možete koristi ovo da merite rezonanciju ručno pokrenutog oscilatora. Amplituda je normalizovana u opsegu od 0 do 1.</string>
+      <string original="Autocorrelation">Autokorelacija</string>
+      <string original="correlation">korelacija</string>
+      <string original="Raw Data">Sirovi podaci</string>
+      <string original="Gyroscope x">Žiroskop x</string>
+      <string original="Gyroscope y">Žiroskop y</string>
+      <string original="Gyroscope z">Žiroskop z</string>
+    </translation>
+    <translation locale="sr_Latn">
+      <title>Klatno</title>
+      <category>Mehanika</category>
+      <description>
+        Odredite gravitacionu konstantu (g=9.81m/s²) koristeći telefon kao klatno.
+        Ovaj eksperiment koristi žiroskop da izmeri kretanje klatna i izračuna oscilatorni period T. Korisnik mora uneti dužinu kanapa koji se koristi za klatno L, da bi phyphox mogao izračunati g = 4π²/T² L.
+
+        Druga opcija vam je da umesto merenja g, koristite karticu dužina i pretpostavite g = 9.81 m/s² da odredite dužinu kanapa iz kretanja klatna. (To je ustvari razdaljina od težišta do centra mase.)
+        Dodatno, u kartici rezonancija, ucrtava se amplituda po detektovanoj frekvenciji. Na ovaj način, možete konstruisati automatski oscilator i menjati njegovu frekvenciju da meri rezonancionu krivu.
+
+        Više detalja:
+        Period oscilacije se dobija kroz autokorelaciju zbira sve tri komponente žiroskopa. Autokorelacija se onda analizira za njen prvi maksimum za prvu procenu, a onda se poslednji maksimum autokorelacije koristi za precizniji rezultat.
+    </description>
+      <string original="Results">Rezultati</string>
+      <string original="Frequency">Frekvencija</string>
+      <string original="Length">Dužina</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Ovde, možete uneti dužinu vašeg klatna (od težišta do centra mase) i određuje Zemljino ubrzanje g.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Ovde, možete odrediti dužinu Vašeg klatna (od težišta do centra mase) pretpostavljate g = 9.81 m/s².</string>
+      <string original="Resonance">Rezonancija</string>
+      <string original="Rel. amplitude">Rel. amplituda</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">U ovoj kartici, amplituda je ucrtana po očitanoj frekvenciji. Možete koristi ovo da merite rezonanciju ručno pokrenutog oscilatora. Amplituda je normalizovana u opsegu od 0 do 1.</string>
+      <string original="Autocorrelation">Autokorelacija</string>
+      <string original="correlation">korelacija</string>
+      <string original="Raw Data">Sirovi podaci</string>
+      <string original="Gyroscope x">Žiroskop x</string>
+      <string original="Gyroscope y">Žiroskop y</string>
+      <string original="Gyroscope z">Žiroskop z</string>
+    </translation>
+    <translation locale="es">
+      <title>Péndulo</title>
+      <category>Mecánica</category>
+      <description>
+        Determine la constante de gravedad (g = 9.81m / s²) usando su teléfono como péndulo.
+
+        Este experimento utiliza el giroscopio para medir el movimiento del péndulo y calcula el período de oscilación T. El usuario debe ingresar la longitud L de la cuerda utilizada para el péndulo, de modo que phyphox pueda calcular g = 4π²L / T².
+
+        Alternativamente, en lugar de medir g, puede usar la longitud de la pestaña y suponer g = 9.81 m / s² para determinar la longitud de la cuerda a partir del movimiento del péndulo. (En realidad, es la distancia desde el punto de pivote al centro de masa).
+
+        Además, en la pestaña de resonancia, traza la amplitud contra la frecuencia detectada. De esta manera, puede construir un oscilador controlado y cambiar su frecuencia para medir una curva de resonancia.
+
+        Más detalles:
+        El período de oscilación se obtiene mediante la autocorrelación de la suma de los tres componentes del giroscopio. La autocorrelación se analiza luego para su primer máximo para una primera estimación y luego se utiliza el último máximo de la autocorrelación para obtener un resultado más preciso.
+    </description>
+      <string original="Results">Resultados</string>
+      <string original="Period">Periodo</string>
+      <string original="Frequency">Frecuencia</string>
+      <string original="Length">Longitud</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">Aquí, puede ingresar la longitud de su péndulo (punto de pivote al centro de masa) y determinar la aceleración de la tierra g.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">Aquí puedes determinar la longitud de su péndulo (punto de pivote al centro de masa) suponiendo que g = 9.81 m / s².</string>
+      <string original="Resonance">Resonancia</string>
+      <string original="Rel. amplitude">Amplitud Relativa</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">En esta pestaña, la amplitud se representa contra la frecuencia detectada. Puede usar esto para medir la resonancia de un oscilador controlado. La amplitud se normaliza a un rango de 0 a 1.</string>
+      <string original="Autocorrelation">Autocorrelación</string>
+      <string original="correlation">Correlación</string>
+      <string original="Raw Data">Datos sin procesar</string>
+      <string original="Gyroscope x">Giroscopio x</string>
+      <string original="Gyroscope y">Giroscopio y</string>
+      <string original="Gyroscope z">Giroscopio z</string>
+    </translation>
+    <translation locale="ka">
+      <title>ქანქარა</title>
+      <category>მექანიკა</category>
+      <description>
+        გამოთვალე გრავიტაციული კონსტანტა (g=9.81m/s²) შენი ტელეფონის ქანქარად გამოყენებით.
+
+        ეს ექსპერიმენტი იყენებს გიროსკოპს რომ გამოთვალოს რხევის პერიოდი T. მომხმარებელმა უნდა შეიყვანოს ქანქარის თოკის სიგრძე L, ფაიფოქსი გამოიყენებს ფორმულას g = 4π²L/T².
+
+        ასევე პირიქით, შეგვიძლია ჩავთვალოთ რომ g = 9.81 m/s² და გამოვთვალოთ ქანქარის თოკის სიგრძე. (უფრო ზუსტად მანძილი ბრუნვის წერტილიდან მასატა ცენტრამდე.)
+
+        ამასთან ერთად, რეზონანსის გვერდზე, იხაზება აპლიტუდის დამოკიდებულება სიხშირეზე. ამის გამოყენებით შეგიძლია ბიძგიანი ოსცილატორი ააწყო და შეცვალო ბიძგების სიხშირე რეზენანსულ სიხშირემდე.
+
+        დამატებითი დეტალები:
+        რხევის პერიოდი მიიღება სამი გიროსკოპის მდგენელის დაჯამებით. ავტომატური კორელაცია გამოიყენება იმისთვის რომ მივიღოთ უფრო ზუსტი შედეგი, რაც გულისხმობს პირველი მაქსიმუმის და ბოლო მაქსიმუმის აღებას.
+    </description>
+      <string original="Results">შედეგები</string>
+      <string original="Period">პერიოდი</string>
+      <string original="Frequency">სიხშირე</string>
+      <string original="Length">სიგრძე</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">აქ, თქვენ შეგიძლიათ ჩაწეროთ ქანქარის თოკის სიგრძე (ბრუნვის წერტილიდან მასათაცენტრამდე მანძილი) და გამოთვალოთ დედამიწის თავისუფალი ვარდნის აჩქარება g.</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">აქ, თქვენ შეგიძლიათ გამოთვალოთ ქანქარის თოკის სიგრძე (მანძილი ბრუნვის წერტილიდან მასათა ცენტრამდე) g = 9.81 m/s²-ს გამოყენებით.</string>
+      <string original="Resonance">რეზონანსი</string>
+      <string original="Rel. amplitude">მიმდინარე ამპლიტუდა</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">ამ გვერდზე, ამპლიტუდის სიხსირეზე დამოკიდებულებაა წარმოდგენილი. თქვენ შეგიძლიათ ეს გამოიყენოთ ბიძგიანი ქანქარისთვის. ამპლიტუდა დანორმირებულია 0-დან 1-მდე.</string>
+      <string original="Autocorrelation">ავტო კორელაცია</string>
+      <string original="correlation">კორელაცია</string>
+      <string original="Raw Data">დაუმუშავებელი მონაცემები</string>
+      <string original="Gyroscope x">გიროსკოპი x</string>
+      <string original="Gyroscope y">გიროსკოპი y</string>
+      <string original="Gyroscope z">გიროსკოპი z</string>
+    </translation>
+    <translation locale="hi">
+      <title>लोलक</title>
+      <category>यांत्रिकी</category>
+      <description>
+        अपने फोन को पेंडुलम के रूप में उपयोग करके गुरुत्वाकर्षण स्थिरांक (g=9.81m/s²) निर्धारित करें।
+
+        यह प्रयोग पेंडुलम की गति को मापने के लिए जाइरोस्कोप का उपयोग करता है और दोलन अवधि T की गणना करता है। उपयोगकर्ता को पेंडुलम के लिए उपयोग की जाने वाली डोरी की लंबाई L दर्ज करनी होती है, जिससे कि फायफॉक्स g = 4π²L/T² की गणना कर सके।
+
+        वैकल्पिक रूप से, g को मापने के बजाय, आप "लंबाई टैब" का उपयोग कर सकते हैं और पेंडुलम की गति से डोरी की लंबाई निर्धारित करने के लिए g = 9.81 m/s² मान सकते हैं। (वास्तव में यह धुरी बिंदु से द्रव्यमान के केंद्र तक की दूरी है।)
+
+        इसके अतिरिक्त, "अनुनाद टैब" पर, यह ज्ञात आवृत्ति के साथ आयाम को प्लॉट करता है। इस तरह, आप एक चालित दोलक का निर्माण कर सकते हैं और अनुनाद वक्र को मापने के लिए इसकी आवृत्ति को बदल सकते हैं।
+
+        आगे की जानकारी:
+        दोलन अवधि सभी तीन जाइरोस्कोप घटकों के योग के स्वत: सहसंबंध के माध्यम से प्राप्त की जाती है। इसके बाद पहले अनुमान के लिए इसके पहले अधिकतम के लिए स्वत: सहसंबंध का विश्लेषण किया जाता है और फिर अधिक सटीक परिणाम प्राप्त करने के लिए अंतिम अधिकतम स्वत: सहसंबंध का उपयोग किया जाता है।
+    </description>
+      <string original="Results">परिणाम</string>
+      <string original="Period">काल</string>
+      <string original="Frequency">आवृत्ति</string>
+      <string original="Length">लम्बाई</string>
+      <string original="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g.">यहां, आप अपने लोलक की लंबाई (धुरी बिंदु से द्रव्यमान केंद्र तक) दर्ज कर सकते हैं और पृथ्वी का त्वरण g निर्धारित कर सकते हैं।</string>
+      <string original="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s².">यहाँ, आप g = 9.81 m/s² मानकर अपने लोलक की लंबाई (धुरी बिंदु से द्रव्यमान केंद्र की दूरी ) निर्धारित कर सकते हैं।</string>
+      <string original="Resonance">अनुनाद</string>
+      <string original="Rel. amplitude">सापेक्षिक आयाम</string>
+      <string original="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1.">इस टैब पर, आयाम को ज्ञात आवृत्ति के विरुद्ध प्लॉट किया जाता है। आप इसका उपयोग किसी चालित दोलक के अनुनाद को मापने के लिए कर सकते हैं। आयाम को 0 से 1 की सीमा तक सामान्यीकृत किया गया है।</string>
+      <string original="Autocorrelation">स्वतः सहसंबंध</string>
+      <string original="correlation">सहसंबंध</string>
+      <string original="Raw Data">मूल (रॉ) डेटा</string>
+      <string original="Gyroscope x">जायरोस्कोप x</string>
+      <string original="Gyroscope y">जायरोस्कोप y</string>
+      <string original="Gyroscope z">जायरोस्कोप z</string>
+    </translation>
+  </translations>
+  <data-containers>
+    <container size="500" init="4.4677716E-2,6.5330998E-2,8.5983966E-2,1.06636779E-1,1.2729006E-1,1.47943341E-1,1.68596154E-1,1.89249123E-1,2.09902404E-1,2.30555685E-1,2.51208341E-1,2.71861466E-1,2.92514748E-1,3.13167873E-1,3.33820529E-1,3.5447381E-1,3.75127091E-1,3.9578006E-1,4.16432873E-1,4.37086154E-1,4.57739435E-1,4.78392248E-1,4.99045216E-1,5.19698498E-1,5.40351779E-1,5.61004435E-1,5.8165756E-1,6.02310841E-1,6.22963966E-1,6.43616623E-1,6.64269904E-1,6.84923185E-1,7.05576154E-1,7.26228966E-1,7.46882248E-1,7.67534904E-1,7.88188029E-1,8.0884131E-1,8.29494435E-1,8.50147091E-1,8.70800373E-1,8.91453654E-1,9.12106623E-1,9.32759435E-1,9.53412716E-1,9.74065373E-1,9.94718498E-1,1.015371779E0,1.036024904E0,1.05667756E0,1.077330841E0,1.097983654E0,1.118636623E0,1.139289904E0,1.159943185E0,1.180595685E0,1.201248966E0,1.221901935E0,1.242554748E0,1.263208029E0,1.28386131E0,1.30451381E0,1.325167091E0,1.345820216E0,1.366472873E0,1.387126154E0,1.407778966E0,1.428431935E0,1.449085216E0,1.469737716E0,1.490390998E0,1.511044279E0,1.531697248E0,1.55235006E0,1.573003341E0,1.593655998E0,1.614309123E0,1.634962091E0,1.655614904E0,1.676268185E0,1.696920841E0,1.717573966E0,1.738227248E0,1.758879748E0,1.779533029E0,1.80018631E0,1.82083881E0,1.841492091E0,1.862145216E0,1.882797873E0,1.903451154E0,1.924103966E0,1.944756935E0,1.96541006E0,1.986062716E0,2.006715998E0,2.02736881E0,2.048021779E0,2.068674904E0,2.08932756E0,2.109980841E0,2.130633654E0,2.151286623E0,2.171939748E0,2.192592404E0,2.213245685E0,2.233898498E0,2.254551466E0,2.275204591E0,2.295857248E0,2.316510529E0,2.337163029E0,2.35781631E0,2.378469435E0,2.399122091E0,2.419775373E0,2.440427873E0,2.461081154E0,2.481733654E0,2.502386935E0,2.523039591E0,2.543692716E0,2.564345998E0,2.584998498E0,2.605651779E0,2.626304435E0,2.64695756E0,2.667610529E0,2.688263341E0,2.708916623E0,2.729569123E0,2.750222404E0,2.770874904E0,2.791528185E0,2.812180685E0,2.832833966E0,2.853486779E0,2.874139748E0,2.894792873E0,2.915445529E0,2.93609881E0,2.95675131E0,2.977404591E0,2.998057091E0,3.018710373E0,3.039363029E0,3.060016154E0,3.080669123E0,3.101321935E0,3.121975216E0,3.142627716E0,3.163280998E0,3.183933498E0,3.204586779E0,3.225239279E0,3.24589256E0,3.26654506E0,3.287198341E0,3.307850841E0,3.328504123E0,3.349156779E0,3.369809904E0,3.390462873E0,3.411115685E0,3.431768185E0,3.452421466E0,3.473074279E0,3.493727248E0,3.514380373E0,3.535033029E0,3.555685685E0,3.57633881E0,3.596991779E0,3.617644591E0,3.638297873E0,3.658950373E0,3.679603185E0,3.700256154E0,3.720909279E0,3.741561935E0,3.762215216E0,3.782867716E0,3.803520685E0,3.824173498E0,3.844826779E0,3.865479279E0,3.886132091E0,3.90678506E0,3.927438185E0,3.948090841E0,3.968743498E0,3.989396623E0,4.010049591E0,4.030702404E0,4.051354904E0,4.072008185E0,4.092660685E0,4.113313966E0,4.133966466E0,4.154619748E0,4.175272248E0,4.195925529E0,4.216578029E0,4.237231154E0,4.25788381E0,4.278537091E0,4.299189591E0,4.31984256E0,4.340495373E0,4.361147873E0,4.381801154E0,4.402453654E0,4.423106935E0,4.443759435E0,4.464412716E0,4.485065216E0,4.505718498E0,4.526370998E0,4.547024123E0,4.567676779E0,4.588329435E0,4.60898256E0,4.62963506E0,4.650288341E0,4.670940841E0,4.691594123E0,4.712246623E0,4.732899591E0,4.753552404E0,4.774204904E0,4.794858185E0,4.815510998E0,4.836163966E0,4.856816466E0,4.877469748E0,4.898122248E0,4.91877506E0,4.939428029E0,4.960080529E0,4.98073381E0,5.00138631E0,5.022039591E0,5.042692091E0,5.063345216E0,5.083997873E0,5.104650529E0,5.125303654E0,5.145956154E0,5.166609435E0,5.187261935E0,5.207915216E0,5.228567716E0,5.249220216E0,5.269873498E0,5.290525998E0,5.311179279E0,5.331831779E0,5.352484748E0,5.37313756E0,5.39379006E0,5.414443341E0,5.435095841E0,5.45574881E0,5.476401623E0,5.497054123E0,5.517707404E0,5.538359904E0,5.559012873E0,5.579665685E0,5.600318185E0,5.620971466E0,5.641623966E0,5.662276935E0,5.682929748E0,5.703582248E0,5.724235529E0,5.744888029E0,5.765540998E0,5.78619381E0,5.80684631E0,5.827499591E0,5.848152091E0,5.86880506E0,5.889457873E0,5.910110373E0,5.930763654E0,5.951416154E0,5.972068654E0,5.992721935E0,6.013374435E0,6.034027091E0,6.054680216E0,6.075332716E0,6.095985998E0,6.116638498E0,6.137291154E0,6.157944279E0,6.178596779E0,6.199249904E0,6.21990256E0,6.24055506E0,6.261208341E0,6.281860841E0,6.302513341E0,6.323166623E0,6.343819123E0,6.364471935E0,6.385124904E0,6.405777404E0,6.426430685E0,6.447083185E0,6.467735685E0,6.488388966E0,6.509041466E0,6.529693966E0,6.550347248E0,6.570999748E0,6.591652248E0,6.612305529E0,6.632958029E0,6.653610685E0,6.67426381E0,6.69491631E0,6.715569435E0,6.736222091E0,6.756874591E0,6.777527873E0,6.798180373E0,6.818832873E0,6.839486154E0,6.860138654E0,6.880791154E0,6.901444435E0,6.922096935E0,6.942749435E0,6.963402716E0,6.984055216E0,7.004707716E0,7.025360998E0,7.046013498E0,7.066665998E0,7.087319279E0,7.107971779E0,7.128624279E0,7.14927756E0,7.16993006E0,7.19058256E0,7.211235841E0,7.231888341E0,7.252540841E0,7.273194123E0,7.293846623E0,7.314499123E0,7.335152248E0,7.355804904E0,7.376457404E0,7.397110216E0,7.417763185E0,7.438415685E0,7.459068185E0,7.479721466E0,7.500373966E0,7.521026466E0,7.541679748E0,7.562332248E0,7.582984748E0,7.603638029E0,7.624290529E0,7.644943029E0,7.66559631E0,7.68624881E0,7.70690131E0,7.727554279E0,7.748207091E0,7.768859591E0,7.789512091E0,7.810165373E0,7.830817873E0,7.851470373E0,7.872123654E0,7.892776154E0,7.913428654E0,7.934081154E0,7.954734435E0,7.975386935E0,7.996039435E0,8.016692716E0,8.037345216E0,8.057997716E0,8.078650216E0,8.099303498E0,8.119955998E0,8.140608498E0,8.161261779E0,8.181914279E0,8.202566779E0,8.223219591E0,8.24387256E0,8.26452506E0,8.28517756E0,8.305830841E0,8.326483341E0,8.347135841E0,8.367788341E0,8.388441623E0,8.409094123E0,8.429746623E0,8.450399591E0,8.471052404E0,8.491704904E0,8.512357404E0,8.533010685E0,8.553663185E0,8.574315685E0,8.594968185E0,8.615621466E0,8.636273966E0,8.656926466E0,8.677578966E0,8.698232248E0,8.718884748E0,8.739537248E0,8.760190216E0,8.780843029E0,8.801495529E0,8.822148029E0,8.842800841E0,8.86345381E0,8.88410631E0,8.90475881E0,8.925412091E0,8.946064591E0,8.966717091E0,8.987369591E0,9.008022873E0,9.028675373E0,9.049327873E0,9.069980373E0,9.090633498E0,9.111286154E0,9.131938654E0,9.152591154E0,9.173244123E0,9.193896935E0,9.214549435E0,9.235201935E0,9.255854748E0,9.276507716E0,9.297160216E0,9.317812716E0,9.338465216E0,9.359118498E0,9.379770998E0,9.400423498E0,9.421075998E0,9.441729279E0,9.462381779E0,9.483034279E0,9.503686779E0,9.524339279E0,9.54499256E0,9.56564506E0,9.58629756E0,9.60695006E0,9.627603341E0,9.648255841E0,9.668908341E0,9.689560841E0,9.710213966E0,9.730866623E0,9.751519123E0,9.772171623E0,9.792824123E0,9.813477404E0,9.834129904E0,9.854782404E0,9.875434904E0,9.896087404E0,9.916740685E0,9.937393185E0,9.958045685E0,9.978698185E0,9.999351154E0,1.002000397E1">gyr_time</container>
+    <container size="500" init="1.078176349E-1,4.489856213E-2,9.621120058E-3,5.192350596E-3,1.282816008E-2,1.053741761E-2,-9.16297175E-3,-3.6651887E-2,-4.566214234E-2,4.581485991E-4,-6.719512492E-2,-1.496618707E-2,2.000582218E-2,2.474002354E-2,2.153298259E-2,9.010255337E-3,-2.290742844E-2,-6.627883017E-2,-1.204930767E-1,-1.762344837E-1,-2.061668634E-1,-1.777616441E-1,-1.211039424E-1,-8.857539296E-2,-8.628465235E-2,-1.136208475E-1,-1.554650813E-1,-1.652389169E-1,-1.325576603E-1,-1.052214578E-1,-1.000291109E-1,-9.544762224E-2,-8.64373669E-2,-8.6895518E-2,-1.012508348E-1,-1.237001196E-1,-1.54396072E-1,-1.818849891E-1,-1.844811589E-1,-1.631008983E-1,-1.409570426E-1,-1.259908676E-1,-1.09955661E-1,-9.025526792E-2,-7.528908551E-2,-6.429351866E-2,-6.185005978E-2,-6.872228533E-2,-8.47574845E-2,-9.88073796E-2,-1.02167137E-1,-9.498947114E-2,-7.40673542E-2,-5.009091273E-2,-3.283398226E-2,-2.000582218E-2,-1.298087649E-2,-1.450803876E-2,-2.565632015E-2,-3.436114267E-2,-2.68780496E-2,-5.345067009E-3,2.718348242E-2,6.444623321E-2,8.323032409E-2,7.895427197E-2,6.01701811E-2,4.276053607E-2,3.14595364E-2,3.008509055E-2,3.466657549E-2,4.138609022E-2,4.612028971E-2,4.612028971E-2,3.558287397E-2,1.847865991E-2,-7.330377586E-3,-3.573558852E-2,-5.894844979E-2,-7.528908551E-2,-8.582650125E-2,-9.208786488E-2,-9.666935354E-2,-9.91128087E-2,-1.026252806E-1,-1.128572673E-1,-1.307250559E-1,-1.498145908E-1,-1.612683088E-1,-1.586721241E-1,-1.400407553E-1,-1.262962967E-1,-1.262962967E-1,-1.262962967E-1,-1.221729591E-1,-1.206457913E-1,-1.250745654E-1,-1.266017258E-1,-1.143844277E-1,-9.453132749E-2,-7.712167501E-2,-6.566796452E-2,-5.803215504E-2,-5.283980444E-2,-5.085449293E-2,-5.054906011E-2,-5.253437161E-2,-5.558869615E-2,-5.757400393E-2,-5.619955808E-2,-5.039634556E-2,-4.3371398E-2,-3.58883068E-2,-2.855792828E-2,-1.970038936E-2,-7.635809947E-3,3.054323839E-3,6.719512399E-3,6.414080039E-3,1.038470119E-2,2.42818743E-2,4.993819445E-2,7.589995116E-2,9.407317638E-2,1.05985038E-1,1.151480079E-1,1.192713454E-1,1.207985133E-1,1.290451884E-1,1.391244531E-1,1.473711282E-1,1.528689116E-1,1.539379209E-1,1.453858167E-1,1.320995092E-1,1.200349256E-1,1.08123064E-1,9.621120244E-2,8.231402934E-2,6.688969582E-2,5.100720748E-2,3.466657549E-2,1.90895237E-2,3.207040019E-3,-1.00792693E-2,-2.397644334E-2,-3.955349326E-2,-5.436696485E-2,-6.429351866E-2,-6.826414168E-2,-6.979130208E-2,-7.36092031E-2,-8.200860023E-2,-8.872810751E-2,-8.414662629E-2,-7.024945319E-2,-5.955931544E-2,-6.307178736E-2,-6.963858753E-2,-5.849030241E-2,-3.802633286E-2,-2.458730713E-2,-2.35182941E-2,-2.825249545E-2,-2.641990222E-2,-1.847865991E-2,-1.160643063E-2,-8.399390616E-3,-1.099556591E-2,-1.420260593E-2,-1.450803876E-2,-1.069013402E-2,-7.483093534E-3,-6.261364091E-3,-2.901607659E-3,2.443459118E-3,9.621120058E-3,1.771507785E-2,2.626718581E-2,3.329212964E-2,4.016435891E-2,4.673115537E-2,5.833758786E-2,7.238747925E-2,8.460476995E-2,9.147699922E-2,9.78910774E-2,1.05985038E-1,1.178968996E-1,1.288924664E-1,1.327103674E-1,1.269071549E-1,1.212566569E-1,1.214093715E-1,1.223256737E-1,1.194240674E-1,1.101083755E-1,9.544762224E-2,8.093958348E-2,6.795870513E-2,5.558869615E-2,4.505127668E-2,3.298669681E-2,1.740964688E-2,1.374445739E-3,-1.175914705E-2,-2.336557768E-2,-3.390299529E-2,-4.138609022E-2,-4.932733253E-2,-5.849030241E-2,-6.887500733E-2,-7.605266571E-2,-8.017600328E-2,-8.093958348E-2,-8.307760954E-2,-8.64373669E-2,-9.117157012E-2,-9.056070447E-2,-8.536835015E-2,-7.773254067E-2,-7.162389904E-2,-6.704241037E-2,-6.16973415E-2,-5.253437161E-2,-4.398226365E-2,-3.817904741E-2,-3.527744114E-2,-3.191768378E-2,-2.672533318E-2,-2.09221188E-2,-1.786779426E-2,-1.710421406E-2,-1.679878123E-2,-1.618791744E-2,-1.298087649E-2,-9.16297175E-3,-4.123337101E-3,1.527161949E-4,6.261364091E-3,1.588248461E-2,2.779434808E-2,3.863719851E-2,4.764745384E-2,5.283980444E-2,5.940660089E-2,7.009673119E-2,8.323032409E-2,9.529490769E-2,1.050687432E-1,1.120936871E-1,1.178968996E-1,1.237001196E-1,1.278234571E-1,1.308777779E-1,1.302669197E-1,1.288924664E-1,1.259908676E-1,1.183550507E-1,1.070540547E-1,9.254601598E-2,7.788526267E-2,6.337722391E-2,5.024362728E-2,3.695731983E-2,2.306014486E-2,7.941242307E-3,-7.788525894E-3,-2.367101051E-2,-3.695731983E-2,-4.810560122E-2,-5.910116807E-2,-7.177661359E-2,-8.552107215E-2,-9.621120244E-2,-1.05985038E-1,-1.142317131E-1,-1.221729591E-1,-1.27212584E-1,-1.282816082E-1,-1.232419685E-1,-1.201876476E-1,-1.194240674E-1,-1.207985133E-1,-1.146898642E-1,-1.058323234E-1,-9.80437994E-2,-9.117157012E-2,-8.47574845E-2,-8.078686893E-2,-7.315105945E-2,-6.612611562E-2,-6.322450191E-2,-6.291907281E-2,-6.505709887E-2,-6.658425927E-2,-6.475166976E-2,-6.444623321E-2,-6.276635826E-2,-6.032289565E-2,-5.57414107E-2,-4.825831577E-2,-4.016435891E-2,-3.207040206E-2,-2.68780496E-2,-2.1685699E-2,-1.206457894E-2,1.221729559E-3,1.542433538E-2,2.596175298E-2,3.420842811E-2,4.123337194E-2,5.070177838E-2,6.01701811E-2,6.811141968E-2,7.070759684E-2,7.25401938E-2,7.467821985E-2,7.880155742E-2,8.063415438E-2,7.605266571E-2,6.734783947E-2,5.665770918E-2,4.734202102E-2,3.802633286E-2,2.886336111E-2,1.847865991E-2,6.719512399E-3,-9.010255337E-3,-2.580903657E-2,-4.505127668E-2,-6.16973415E-2,-7.299833745E-2,-7.819069177E-2,-8.155044913E-2,-8.735366166E-2,-9.575305134E-2,-1.070540547E-1,-1.13926284E-1,-1.160643101E-1,-1.140789986E-1,-1.11788258E-1,-1.11635536E-1,-1.114828214E-1,-1.046105921E-1,-9.056070447E-2,-7.605266571E-2,-6.765327603E-2,-6.704241037E-2,-6.841685623E-2,-6.368265301E-2,-5.436696485E-2,-4.566214234E-2,-3.909534588E-2,-3.833176568E-2,-3.878991306E-2,-3.817904741E-2,-3.756818548E-2,-3.649916872E-2,-3.6651887E-2,-3.726275265E-2,-3.58883068E-2,-3.054323979E-2,-2.138026804E-2,-1.114828233E-2,-1.527161949E-4,7.330377586E-3,1.664606482E-2,2.779434808E-2,3.955349326E-2,4.825831577E-2,5.131264031E-2,5.329795182E-2,6.200277433E-2,7.498364896E-2,9.010255337E-2,9.972367436E-2,1.029307172E-1,1.027780026E-1,1.055268943E-1,1.105665267E-1,1.160643101E-1,1.165224537E-1,1.110246703E-1,1.02167137E-1,9.025526792E-2,7.666353136E-2,6.246092543E-2,4.825831577E-2,3.649916872E-2,2.504545636E-2,1.466075517E-2,3.665188793E-3,-1.053741761E-2,-2.35182941E-2,-3.451386094E-2,-4.306596518E-2,-4.917461425E-2,-5.910116807E-2,-6.902772188E-2,-7.391463965E-2,-7.162389904E-2,-6.841685623E-2,-6.963858753E-2,-7.45255053E-2,-8.048143238E-2,-7.910698652E-2,-7.208204269E-2,-6.597339362E-2,-6.383536756E-2,-6.307178736E-2,-6.276635826E-2,-6.200277433E-2,-6.261363626E-2,-6.352993846E-2,-6.872228533E-2,-7.208204269E-2,-7.422006875E-2,-7.422006875E-2,-7.37619251E-2,-7.162389904E-2,-7.086031139E-2,-6.841685623E-2,-6.658425927E-2,-6.398808211E-2,-6.001746282E-2,-5.681042373E-2,-5.345066637E-2,-5.070177838E-2,-4.444041103E-2,-3.802633286E-2,-2.733619884E-2,-1.618791744E-2,-7.483093534E-3,-7.635809598E-4,5.192350596E-3,1.023198478E-2,1.634063199E-2,2.183841541E-2,2.733619884E-2,3.130681813E-2,3.298669681E-2,3.313941509E-2,2.916879393E-2,2.412915789E-2,1.786779426E-2,9.315688163E-3,-1.069013379E-3,-1.298087649E-2,-2.565632015E-2,-3.619373962E-2,-4.444041103E-2,-5.146535859E-2,-5.635227636E-2,-6.01701811E-2,-6.21554926E-2,-6.734783947E-2,-6.856957078E-2,-6.459894776E-2,-5.894844979E-2,-5.513054505E-2,-5.329795182E-2,-4.97854799E-2,-4.352411628E-2,-3.619373962E-2,-2.993237413E-2,-2.489273995E-2,-2.1685699E-2,-1.939495653E-2,-1.863137633E-2,-1.924224012E-2,-1.970038936E-2,-2.244928107E-2,-2.1685699E-2,-1.863137633E-2,-1.359174121E-2,-1.038470119E-2,-1.053741761E-2,-1.221729536E-2,-1.57297682E-2,-1.939495653E-2,-2.42818743E-2,-3.008509055E-2,2.420551628E-1">gyrX</container>
+    <container size="500" init="2.183841541E-2,-1.26754446E-2,1.160643063E-2,5.054906011E-2,7.788525894E-3,-2.138026804E-2,2.09221188E-2,8.994983882E-2,1.857028902E-1,6.948586553E-2,-3.677406013E-1,-7.582359314E-1,-9.737184644E-1,-6.8661201E-1,-5.681042373E-2,4.083631039E-1,4.955640435E-1,2.092211843E-1,-1.340848207E-1,-2.341139317E-1,-4.963276163E-2,3.072649837E-1,4.387536347E-1,2.489273995E-1,2.397644334E-2,-5.009091273E-2,1.754709035E-1,5.012145638E-1,5.120574236E-1,2.591593862E-1,3.619373962E-2,1.664606482E-2,1.699731201E-1,3.240637779E-1,3.127627671E-1,1.380554438E-1,-6.627883017E-2,-9.91128087E-2,6.09337613E-2,1.81426838E-1,1.182023361E-1,-5.619955808E-2,-2.037234008E-1,-2.700022459E-1,-2.561050653E-1,-1.945604384E-1,-1.012508348E-1,3.054323897E-4,1.725693047E-2,-4.825831577E-2,-1.670715213E-1,-2.906189263E-1,-2.945895493E-1,-2.365573794E-1,-2.640463114E-1,-3.504836559E-1,-4.502073526E-1,-4.764745235E-1,-4.134027362E-1,-4.163043499E-1,-4.564687014E-1,-5.148062706E-1,-5.894845128E-1,-5.775726438E-1,-4.984656572E-1,-4.218021333E-1,-4.074468017E-1,-4.602866173E-1,-4.298960865E-1,-3.034470677E-1,-1.818849891E-1,-1.437059343E-1,-1.715002805E-1,-1.704312712E-1,-1.163697392E-1,-3.527744114E-2,3.970621154E-2,1.105665267E-1,2.131918073E-1,2.96880275E-1,2.942841053E-1,2.614501119E-1,2.556469142E-1,3.346011937E-1,4.392117858E-1,4.951058924E-1,4.989238083E-1,4.984656572E-1,5.496255755E-1,6.479747891E-1,6.420188546E-1,4.986183643E-1,4.431824088E-1,5.453495383E-1,6.29190743E-1,5.948295593E-1,5.054906011E-1,4.825831652E-1,5.148062706E-1,5.258018374E-1,4.900662601E-1,3.97367537E-1,3.184132576E-1,2.910770774E-1,2.797760665E-1,2.373209596E-1,1.502727419E-1,1.099556591E-2,-1.308777779E-1,-1.996000707E-1,-1.879936308E-1,-1.88909933E-1,-2.270889878E-1,-3.155116439E-1,-4.6685341E-1,-5.945241451E-1,-5.621483326E-1,-4.810560048E-1,-5.225948095E-1,-6.531671882E-1,-7.796161771E-1,-7.837395072E-1,-7.153226733E-1,-6.896663308E-1,-7.380773425E-1,-7.536544204E-1,-7.012727857E-1,-6.783653498E-1,-6.843212843E-1,-6.922625303E-1,-6.052142978E-1,-4.4776389E-1,-3.245218992E-1,-3.04821521E-1,-3.342957497E-1,-3.077231348E-1,-1.931859851E-1,-4.566214234E-2,6.429351866E-2,9.208786488E-2,7.574722916E-2,8.918625861E-2,1.742491722E-1,2.912297845E-1,3.865246773E-1,4.173733592E-1,3.871355653E-1,3.911061883E-1,4.495964646E-1,5.189296007E-1,5.528326035E-1,5.071704984E-1,4.463894367E-1,5.383245945E-1,7.199041247E-1,7.761036754E-1,6.41102612E-1,4.295906425E-1,4.16457057E-1,5.960513353E-1,6.852375865E-1,5.571087003E-1,3.387245238E-1,2.16093421E-1,2.713766694E-1,3.871355653E-1,3.738492429E-1,2.023489624E-1,-1.00792693E-2,-1.4676027E-1,-1.811214089E-1,-1.091920808E-1,-7.238747925E-2,-1.531743407E-1,-2.182314396E-1,-2.81761378E-1,-3.694204688E-1,-4.030180275E-1,-3.993528485E-1,-4.108065665E-1,-4.366155863E-1,-5.143481493E-1,-5.760455132E-1,-5.43669641E-1,-4.928151667E-1,-4.645626545E-1,-5.021308661E-1,-6.123919487E-1,-6.527090073E-1,-5.54817915E-1,-3.915643096E-1,-3.072649837E-1,-3.89731735E-1,-4.563159943E-1,-3.949240744E-1,-2.43124187E-1,-1.023198515E-1,-1.076649204E-1,-1.747073233E-1,-1.786779463E-1,-7.864884287E-2,6.459894776E-2,1.366809905E-1,1.262962967E-1,1.09955661E-1,1.469129771E-1,2.408334464E-1,3.402516842E-1,4.054614902E-1,3.979783952E-1,3.553705812E-1,3.486510813E-1,3.966039717E-1,4.653262496E-1,5.05337894E-1,4.725039005E-1,4.075995386E-1,4.04850632E-1,4.575377107E-1,5.027416945E-1,4.931205809E-1,4.470002949E-1,4.182896614E-1,4.233292937E-1,4.421133697E-1,4.075995386E-1,3.147480786E-1,2.27852568E-1,1.873827726E-1,1.89062655E-1,1.728747338E-1,9.83492285E-2,-1.206457894E-2,-1.13773562E-1,-1.598938555E-1,-1.869246215E-1,-2.078467458E-1,-2.226602137E-1,-3.017672002E-1,-4.141663313E-1,-4.877755344E-1,-4.70518589E-1,-4.285216331E-1,-4.163043499E-1,-4.497492015E-1,-5.120574236E-1,-5.62759161E-1,-5.794052482E-1,-5.540543795E-1,-5.215258002E-1,-4.874700904E-1,-4.903717041E-1,-4.547888339E-1,-3.996582925E-1,-3.704894781E-1,-3.651444316E-1,-3.503309488E-1,-2.84968406E-1,-1.710421443E-1,-9.040798992E-2,-9.086613357E-2,-1.134681329E-1,-1.072067693E-1,-4.810560122E-2,3.878991306E-2,1.023198515E-1,1.102610901E-1,9.941824526E-2,1.320995092E-1,2.105956376E-1,2.829830945E-1,3.182605505E-1,3.035998046E-1,3.144426346E-1,3.523162603E-1,3.773617148E-1,4.098902643E-1,4.222602844E-1,4.24092859E-1,4.957167804E-1,5.426006317E-1,4.93884176E-1,4.288270772E-1,4.381427765E-1,5.018253922E-1,5.389354229E-1,4.960221946E-1,4.297433794E-1,3.825540543E-1,3.562868834E-1,3.756818473E-1,3.642281294E-1,2.480110973E-1,1.148425788E-1,1.237001177E-2,-6.154462695E-2,-7.086031139E-2,-6.139190868E-2,-1.322522312E-1,-2.281579971E-1,-3.344484568E-1,-4.163043499E-1,-4.118755758E-1,-3.7400195E-1,-3.762927055E-1,-4.433351159E-1,-5.296197534E-1,-5.693259835E-1,-5.589412451E-1,-5.247328281E-1,-5.285507441E-1,-5.690205693E-1,-6.023126841E-1,-5.632173419E-1,-4.657844007E-1,-4.372264743E-1,-4.721984863E-1,-5.238165259E-1,-5.192350745E-1,-4.132500291E-1,-2.774853408E-1,-1.996000707E-1,-1.843284518E-1,-2.134972364E-1,-2.141081095E-1,-1.356119812E-1,1.191186346E-2,1.536324918E-1,1.96698457E-1,1.559232324E-1,1.198822111E-1,1.69820413E-1,3.035998046E-1,4.292852283E-1,4.761691093E-1,4.389063418E-1,3.849975169E-1,4.134027362E-1,5.057960153E-1,5.913171172E-1,6.079631448E-1,5.534434915E-1,4.864010811E-1,4.857902229E-1,5.829176903E-1,6.644681692E-1,6.476693749E-1,5.241219997E-1,3.559814394E-1,2.990183234E-1,3.659079969E-1,4.031707644E-1,3.608683646E-1,2.516762912E-1,1.046105921E-1,1.832594397E-3,-1.374445739E-3,7.177661173E-3,-1.31335929E-2,-5.635227636E-2,-1.718057245E-1,-3.08639437E-1,-3.898844421E-1,-4.166097939E-1,-4.089739621E-1,-3.988946974E-1,-4.6685341E-1,-5.491674542E-1,-5.71311295E-1,-5.300779343E-1,-4.16457057E-1,-3.816377819E-1,-4.696022868E-1,-5.931497216E-1,-6.777544618E-1,-6.462949514E-1,-5.427533388E-1,-4.893026948E-1,-4.893026948E-1,-5.209149122E-1,-4.937314689E-1,-3.758345544E-1,-2.5793764E-1,-1.838703007E-1,-1.498145908E-1,-1.88909933E-1,-2.380845547E-1,-1.991419196E-1,-7.605266571E-2,7.620538026E-2,2.095266134E-1,2.296851575E-1,1.661552191E-1,1.411097646E-1,2.209803313E-1,3.559814394E-1,4.711294472E-1,4.905244112E-1,4.24703747E-1,3.940077722E-1,4.608974755E-1,5.564978123E-1,5.884155035E-1,5.300779343E-1,4.644099474E-1,5.04727006E-1,5.971203446E-1,6.189587116E-1,5.586358309E-1,4.583013058E-1,3.685041666E-1,3.225366175E-1,3.231474757E-1,2.871064544E-1,2.072358727E-1,1.389717311E-1,7.696896046E-2,4.703658819E-2,3.390299529E-2,2.611446939E-2,4.428769462E-3,-5.604684353E-2,-1.278234571E-1,-1.945604384E-1,-2.493855506E-1,-2.721402645E-1,-2.640463114E-1,-2.854265571E-1,-3.613265157E-1,-4.373791814E-1,-4.784598351E-1,-5.05948782E-1,-4.948004782E-1,-4.751000702E-1,-5.074759126E-1,-5.40309906E-1,-5.511527658E-1,-5.516108871E-1,-5.250383019E-1,-4.937314689E-1,-4.667007029E-1,-4.433351159E-1,-4.155407548E-1,-4.106538594E-1,-4.303542376E-1,-4.170679152E-1,-3.581194878E-1,-3.078758419E-1,-3.052796721E-1,-2.942841053E-1,-1.985310465E-1,-6.01701811E-2,6.963858753E-2,1.92880556E-1,2.669478953E-1,2.530507445E-1,3.071122766E-1,4.360047281E-1,5.5145818E-1,6.3193959E-1,6.305651665E-1,6.017017961E-1,6.542361975E-1,7.223476171E-1,7.738129497E-1,7.790052891E-1,7.527381182E-1,7.376192212E-1,7.374665141E-1,7.356339097E-1,7.073814273E-1,6.670643687E-1,6.239983439E-1,5.986474752E-1,5.833758712E-1,5.519163013E-1,5.232056975E-1,4.341721535E-1,3.135263622E-1,2.354883701E-1,1.548542231E-1,8.781181276E-2,2.489273995E-2,1.455843449E0">gyrY</container>
+    <container size="500" init="9.162971983E-4,7.25401938E-2,9.850194305E-2,8.139773458E-2,1.603520103E-2,-2.916879393E-2,-7.483093534E-3,2.138026804E-2,4.18442376E-2,8.124501258E-2,2.722929716E-1,8.649845123E-1,1.55068028E0,1.647349596E0,9.535599351E-1,-1.950185746E-1,-1.610392332E0,-3.253771305E0,-4.74641943E0,-5.728231907E0,-5.630187988E0,-4.435641766E0,-2.790124893E0,-1.310915828E0,-7.944296598E-1,-1.727525592E0,-3.524689674E0,-5.249619007E0,-6.205927849E0,-5.795579433E0,-4.325380802E0,-2.479042053E0,-1.026100159E0,-6.841685772E-1,-1.346346021E0,-2.442084789E0,-3.432143688E0,-3.855473042E0,-3.554316759E0,-2.659552574E0,-1.462715745E0,-2.787070572E-1,7.191405892E-1,1.488219261E0,2.023642302E0,2.25897789E0,2.124893188E0,1.727067471E0,1.252883673E0,9.21794951E-1,9.502001405E-1,1.486081243E0,2.426813126E0,3.444972038E0,4.220922947E0,4.469239235E0,4.057974815E0,3.263239622E0,2.512944937E0,2.172846079E0,2.41627574E0,3.052033186E0,3.698938847E0,3.987419844E0,3.753458738E0,3.111134291E0,2.314719439E0,1.600007534E0,1.146593213E0,1.025794625E0,1.144607902E0,1.346651435E0,1.481499791E0,1.424078465E0,1.13544488E0,6.554579139E-1,2.031125315E-2,-6.630937457E-1,-1.281288862E0,-1.777616501E0,-2.088699341E0,-2.18827033E0,-2.114813805E0,-1.973245978E0,-1.901927471E0,-2.030972719E0,-2.402989388E0,-2.931998253E0,-3.434739828E0,-3.717875719E0,-3.68168211E0,-3.385259867E0,-3.001178741E0,-2.71758461E0,-2.656498194E0,-2.818530083E0,-3.052185774E0,-3.173748016E0,-3.071580887E0,-2.738354206E0,-2.253021955E0,-1.729816318E0,-1.256396174E0,-8.808670044E-1,-6.177369952E-1,-4.468475878E-1,-3.15969795E-1,-1.608101577E-1,6.719512492E-2,3.758345544E-1,7.785471678E-1,1.247080445E0,1.71011591E0,2.102138519E0,2.384968758E0,2.521039009E0,2.523940563E0,2.471558809E0,2.466213942E0,2.593121052E0,2.862665176E0,3.181536436E0,3.412748814E0,3.469712019E0,3.334405422E0,3.066388369E0,2.766301155E0,2.523176908E0,2.372598886E0,2.300058603E0,2.248745918E0,2.152534723E0,1.975383997E0,1.716224551E0,1.399949312E0,1.056185246E0,7.139481902E-1,3.993528485E-1,1.206457913E-1,-1.339320987E-1,-3.758345544E-1,-6.18042469E-1,-8.80256176E-1,-1.170875072E0,-1.482874274E0,-1.800523996E0,-2.087783098E0,-2.320369959E0,-2.486830473E0,-2.583041668E0,-2.623664141E0,-2.644433737E0,-2.677572966E0,-2.737895966E0,-2.814864874E0,-2.879158497E0,-2.905883789E0,-2.877631187E0,-2.791957378E0,-2.658941746E0,-2.489426613E0,-2.296240807E0,-2.086714029E0,-1.880394459E0,-1.675602078E0,-1.458745122E0,-1.220813274E0,-9.705114365E-1,-7.101303339E-1,-4.347830117E-1,-1.716530025E-1,7.727439702E-2,3.439168632E-1,6.301070452E-1,9.260709882E-1,1.227074623E0,1.513875604E0,1.770897031E0,1.988364816E0,2.155741692E0,2.2800529E0,2.382525444E0,2.48331809E0,2.592662811E0,2.703076601E0,2.796233416E0,2.845102787E0,2.829067469E0,2.748891592E0,2.63343811E0,2.515999317E0,2.406043768E0,2.295018911E0,2.164599419E0,2.003483772E0,1.811061382E0,1.582903385E0,1.318398952E0,1.036790252E0,7.528908253E-1,4.851793647E-1,2.333503515E-1,-1.511890348E-2,-2.628245652E-1,-5.088503361E-1,-7.531962991E-1,-1.009148598E0,-1.264184713E0,-1.509446859E0,-1.73225975E0,-1.928500056E0,-2.097404242E0,-2.239124775E0,-2.363130331E0,-2.473086119E0,-2.57464242E0,-2.663523197E0,-2.728580236E0,-2.753931046E0,-2.731329203E0,-2.663523197E0,-2.564563036E0,-2.452622175E0,-2.344346285E0,-2.236834049E0,-2.115119219E0,-1.961792231E0,-1.769522548E0,-1.545946002E0,-1.286175847E0,-9.83186841E-1,-6.583595276E-1,-3.536907136E-1,-7.513637096E-2,1.881463528E-1,4.494437575E-1,7.084504366E-1,9.694424272E-1,1.232419729E0,1.486081243E0,1.71423924E0,1.924834967E0,2.112828493E0,2.272417068E0,2.406807184E0,2.524093151E0,2.626413107E0,2.699411392E0,2.739423037E0,2.750418663E0,2.737132311E0,2.701244116E0,2.646113396E0,2.584110737E0,2.500422239E0,2.375958443E0,2.202014923E0,1.99019742E0,1.752723813E0,1.492189884E0,1.215162754E0,9.285144806E-1,6.388118267E-1,3.480401933E-1,6.490438432E-2,-2.040288299E-1,-4.70518589E-1,-7.368556261E-1,-9.929606915E-1,-1.239139199E0,-1.469282508E0,-1.687513947E0,-1.886961341E0,-2.066708326E0,-2.232558012E0,-2.384663343E0,-2.523024321E0,-2.645655394E0,-2.737437725E0,-2.783710718E0,-2.782336235E0,-2.744310141E0,-2.681543589E0,-2.606407404E0,-2.517679214E0,-2.407723427E0,-2.268599033E0,-2.096640587E0,-1.88909936E0,-1.654832721E0,-1.403461814E0,-1.135750294E0,-8.704823256E-1,-6.188060045E-1,-3.749182522E-1,-1.368337125E-1,9.575305134E-2,3.404043913E-1,5.957458615E-1,8.416189551E-1,1.074053049E0,1.294117093E0,1.496924162E0,1.681558013E0,1.865581036E0,2.053880215E0,2.24248457E0,2.412610531E0,2.54837513E0,2.634048939E0,2.666424751E0,2.656345606E0,2.622442484E0,2.586554289E0,2.556163788E0,2.517526388E0,2.442237377E0,2.311665058E0,2.12428236E0,1.900552988E0,1.665980935E0,1.442404509E0,1.2339468E0,1.029765248E0,8.129082918E-1,5.789470673E-1,3.326158822E-1,7.3303774E-2,-1.983783394E-1,-4.911352694E-1,-7.887791395E-1,-1.06886065E0,-1.309694052E0,-1.503338218E0,-1.651320219E0,-1.777311087E0,-1.905134559E0,-2.059377909E0,-2.239735603E0,-2.424827814E0,-2.579987288E0,-2.677572966E0,-2.705978155E0,-2.672533512E0,-2.597855091E0,-2.5086689E0,-2.425438643E0,-2.357938051E0,-2.293186426E0,-2.204458237E0,-2.063348532E0,-1.858861566E0,-1.600771189E0,-1.307556033E0,-9.987639189E-1,-7.034108043E-1,-4.353938699E-1,-1.942549944E-1,2.443459071E-2,2.388481349E-1,4.670061171E-1,7.084504366E-1,9.589049816E-1,1.222187757E0,1.485317707E0,1.726303816E0,1.920253396E0,2.059530497E0,2.160017967E0,2.245691538E0,2.342360973E0,2.452469349E0,2.555705547E0,2.615112066E0,2.598313332E0,2.497520685E0,2.336405039E0,2.164141178E0,2.01081419E0,1.89581883E0,1.812283039E0,1.733481526E0,1.632230639E0,1.493106246E0,1.293506145E0,1.037095666E0,7.374665141E-1,4.098902643E-1,8.536835015E-2,-1.965457499E-1,-4.233292937E-1,-6.004800797E-1,-7.507528067E-1,-9.005674124E-1,-1.073442101E0,-1.284190536E0,-1.518457174E0,-1.754403591E0,-1.956447124E0,-2.094044447E0,-2.15681076E0,-2.153450966E0,-2.113744736E0,-2.0773983E0,-2.08197999E0,-2.137110472E0,-2.212399483E0,-2.256992579E0,-2.234237909E0,-2.134819746E0,-1.975689411E0,-1.792735457E0,-1.613904715E0,-1.454621792E0,-1.318398952E0,-1.187368393E0,-1.029918075E0,-8.300125003E-1,-5.917752385E-1,-3.219257295E-1,-2.504545636E-2,2.793179154E-1,5.636754632E-1,8.086322546E-1,1.004872561E0,1.14414978E0,1.243415236E0,1.33504498E0,1.447291374E0,1.593288064E0,1.76784265E0,1.947131515E0,2.098167896E0,2.192699194E0,2.21927166E0,2.189644814E0,2.131001711E0,2.066860914E0,2.014173985E0,1.974009514E0,1.928194642E0,1.851073027E0,1.724471331E0,1.537546635E0,1.304196358E0,1.046716809E0,7.808378935E-1,5.035052896E-1,2.196058929E-1,-4.031707719E-2,-2.773326039E-1,-4.867065251E-1,-6.597339511E-1,-7.964149714E-1,-9.149227142E-1,-1.018464327E0,-1.111010313E0,-1.187979221E0,-1.249065757E0,-1.301905513E0,-1.353676319E0,-1.398116708E0,-1.422245979E0,-1.412777543E0,-1.361922979E0,-1.277929068E0,-1.171944022E0,-1.054658055E0,-9.498947263E-1,-8.831577301E-1,-8.76285553E-1,-9.17977035E-1,-9.735657573E-1,-1.001665473E0,-9.677625299E-1,-8.811724186E-1,-7.817541957E-1,-6.924152374E-1,-6.162098646E-1,-5.59399426E-1,-5.235111117E-1,-4.911352694E-1,-4.352411628E-1,-5.8704108E-1">gyrZ</container>
+    <container size="500" init="1.305723476E-1,1.047633113E-1,1.197294937E-1,1.371391453E-1,3.6651887E-2,-4.001164436E-2,4.276053514E-3,7.467821985E-2,1.818849854E-1,1.511890267E-1,-1.626427546E-1,9.178239387E-2,5.969676375E-1,9.854776096E-1,9.182824939E-1,2.223547846E-1,-1.137735717E0,-3.110828951E0,-5.000997327E0,-6.138580322E0,-5.885987613E0,-4.306138426E0,-2.472475201E0,-1.150563821E0,-8.567378689E-1,-1.891237352E0,-3.504683852E0,-4.91364336E0,-5.826428086E0,-5.641641505E0,-4.389216173E0,-2.557843611E0,-9.425644055E-1,-4.470003173E-1,-1.134834088E0,-2.427729465E0,-3.65281859E0,-4.136470839E0,-3.677864157E0,-2.641226634E0,-1.485470451E0,-4.608974829E-1,4.054615274E-1,1.127961747E0,1.692248151E0,2.000123933E0,1.961792294E0,1.658650618E0,1.185383119E0,7.747292556E-1,6.809614822E-1,1.100472845E0,2.058156222E0,3.158323746E0,3.924042653E0,4.098749757E0,3.594786586E0,2.77225706E0,2.07388588E0,1.722180586E0,1.932928989E0,2.531881848E0,3.136637816E0,3.474293433E0,3.338223405E0,2.768286429E0,1.967442818E0,1.182481453E0,7.48156663E-1,7.524326481E-1,9.973894879E-1,1.244331591E0,1.3561198E0,1.299767483E0,1.054658014E0,6.386591326E-1,5.26870871E-2,-5.882628076E-1,-1.127045505E0,-1.556025311E0,-1.880241737E0,-2.018908083E0,-1.955836244E0,-1.737757593E0,-1.565340966E0,-1.648724094E0,-2.034790635E0,-2.583347186E0,-3.046382561E0,-3.228573054E0,-3.17970401E0,-3.012937799E0,-2.684292629E0,-2.298531368E0,-2.14948041E0,-2.344346315E0,-2.671769738E0,-2.817766577E0,-2.671159044E0,-2.307083696E0,-1.84007737E0,-1.398116745E0,-9.960150719E-1,-6.426297314E-1,-3.888154216E-1,-2.600756884E-1,-2.182314247E-1,-2.054032879E-1,-1.212566569E-1,1.200349256E-1,5.401571915E-1,1.014799114E0,1.447138615E0,1.758068947E0,1.898414958E0,1.918879054E0,1.964846554E0,1.997222317E0,1.950033212E0,1.950338565E0,2.107330874E0,2.447735123E0,2.773326091E0,2.874118865E0,2.702313118E0,2.427881956E0,2.184299715E0,1.965610072E0,1.817322791E0,1.746920526E0,1.790902749E0,1.857639745E0,1.804800019E0,1.556788847E0,1.197753072E0,8.684970364E-1,6.288852692E-1,4.499019086E-1,2.672533393E-1,2.504546195E-2,-2.490801178E-1,-4.941896349E-1,-6.869174801E-1,-8.76438248E-1,-1.106428866E0,-1.40712708E0,-1.740201026E0,-1.983630735E0,-2.101527527E0,-2.132376209E0,-2.140622839E0,-2.210872442E0,-2.313192129E0,-2.288299479E0,-2.179107375E0,-2.173304275E0,-2.324340492E0,-2.511112332E0,-2.445138909E0,-2.121380713E0,-1.842215359E0,-1.763719413E0,-1.7715078E0,-1.692553533E0,-1.430645311E0,-1.090088217E0,-8.585704621E-1,-7.765618647E-1,-7.312051691E-1,-5.957458876E-1,-3.672824502E-1,-4.26078178E-2,2.640462904E-1,4.706713404E-1,7.049379409E-1,9.477567042E-1,1.154076255E0,1.385594081E0,1.615279153E0,1.778227255E0,1.883601673E0,1.91490845E0,1.965610165E0,2.12138065E0,2.294866204E0,2.42314776E0,2.440862998E0,2.322660558E0,2.214079484E0,2.207512662E0,2.257145375E0,2.225685939E0,2.026543833E0,1.829692796E0,1.730885372E0,1.687361263E0,1.590691909E0,1.306181654E0,9.430225119E-1,6.421715841E-1,4.62119218E-1,3.430005759E-1,1.545487838E-1,-1.191186216E-1,-3.975202293E-1,-6.18042469E-1,-7.91680729E-1,-9.578360245E-1,-1.145371459E0,-1.383608688E0,-1.631619778E0,-1.817628168E0,-1.918573469E0,-1.977980085E0,-2.048687808E0,-2.185216129E0,-2.342361026E0,-2.414901175E0,-2.386954039E0,-2.313955858E0,-2.248135157E0,-2.18918664E0,-2.101374924E0,-1.982714333E0,-1.847255051E0,-1.751501944E0,-1.685223199E0,-1.576947421E0,-1.390480913E0,-1.123838525E0,-8.31234226E-1,-5.778780933E-1,-3.828595066E-1,-2.057087142E-1,1.206457987E-2,2.495382596E-1,4.91440719E-1,7.426588763E-1,9.308052452E-1,1.078176275E0,1.24234619E0,1.482110726E0,1.722944058E0,1.903760172E0,2.009897787E0,2.071442328E0,2.133750677E0,2.203236468E0,2.280663565E0,2.333961606E0,2.361755908E0,2.328769311E0,2.315024681E0,2.312275901E0,2.260810539E0,2.141080931E0,1.980576441E0,1.831219882E0,1.700036719E0,1.508835949E0,1.216842636E0,8.929316103E-1,5.949822813E-1,3.501782194E-1,1.406516172E-1,-7.864883356E-2,-3.523162566E-1,-6.452259067E-1,-8.845321927E-1,-1.065500882E0,-1.234405015E0,-1.428354565E0,-1.65513815E0,-1.837786764E0,-1.976452954E0,-2.113286667E0,-2.227365769E0,-2.345568068E0,-2.44055745E0,-2.416275546E0,-2.362977572E0,-2.370613612E0,-2.372140579E0,-2.289063141E0,-2.130543686E0,-1.974620327E0,-1.870620638E0,-1.758068778E0,-1.59130279E0,-1.379332706E0,-1.100931026E0,-8.3764828E-1,-6.856957301E-1,-5.668824986E-1,-4.276053393E-1,-2.649625987E-1,-3.985892981E-2,2.145662494E-1,4.00727272E-1,5.531380624E-1,6.838631816E-1,8.295544274E-1,1.044884227E0,1.275485661E0,1.46241028E0,1.5888594E0,1.700800237E0,1.844506277E0,2.00485822E0,2.135277864E0,2.172082435E0,2.128558408E0,2.070831578E0,2.083507128E0,2.158490807E0,2.151007511E0,2.042579085E0,1.862526752E0,1.683848843E0,1.567937113E0,1.46454826E0,1.310152277E0,1.106276058E0,8.636100329E-1,6.368265152E-1,4.721984472E-1,3.630064055E-1,2.336557782E-1,-1.069013774E-2,-3.610210735E-1,-7.139482051E-1,-9.607375786E-1,-1.079092585E0,-1.152243681E0,-1.256701559E0,-1.425758407E0,-1.615890093E0,-1.753029227E0,-1.847865872E0,-1.949575007E0,-2.086103141E0,-2.235917732E0,-2.33121261E0,-2.298226111E0,-2.119547993E0,-1.934761435E0,-1.853821933E0,-1.901469328E0,-2.004247397E0,-1.97385677E0,-1.761123188E0,-1.510057766E0,-1.285564966E0,-1.094975088E0,-9.324850924E-1,-7.403681229E-1,-4.74947363E-1,-2.246455187E-1,-2.519817092E-2,1.458439715E-1,2.5793764E-1,3.639226928E-1,5.384772997E-1,7.841976956E-1,1.065195463E0,1.327256402E0,1.460730364E0,1.527009107E0,1.61650102E0,1.755167097E0,1.974162232E0,2.122144207E0,2.139401212E0,2.083965119E0,1.995542519E0,1.941328287E0,1.893375374E0,1.777769201E0,1.624289498E0,1.480430812E0,1.429118097E0,1.473711282E0,1.490815453E0,1.420260616E0,1.245858692E0,9.384410009E-1,5.760454908E-1,2.732092701E-1,5.757400021E-2,-8.384120092E-2,-1.88757224E-1,-3.561341669E-1,-5.809323988E-1,-7.699950654E-1,-8.759800643E-1,-9.627229571E-1,-1.090393692E0,-1.313053794E0,-1.590844546E0,-1.769064397E0,-1.769827925E0,-1.668577053E0,-1.593746088E0,-1.616958953E0,-1.692095548E0,-1.712864898E0,-1.694386125E0,-1.71011591E0,-1.741575472E0,-1.740353808E0,-1.670257032E0,-1.532965198E0,-1.352760013E0,-1.230128974E0,-1.174693018E0,-1.117118947E0,-1.025031157E0,-8.571959808E-1,-6.32092312E-1,-3.695731852E-1,-9.224058595E-2,1.524107605E-1,3.674351498E-1,5.474875569E-1,6.914989278E-1,8.119920529E-1,9.225585014E-1,9.961677566E-1,1.03526308E0,1.111468472E0,1.251356483E0,1.413846534E0,1.587179501E0,1.71011603E0,1.711032166E0,1.654527258E0,1.59008093E0,1.531590659E0,1.510974098E0,1.507614244E0,1.492800757E0,1.440724608E0,1.342069991E0,1.156061569E0,8.979712781E-1,6.475166883E-1,4.320340939E-1,1.945604343E-1,-9.865465574E-2,-3.602575026E-1,-5.120573901E-1,-5.913171172E-1,-6.415607221E-1,-6.598866917E-1,-7.08145E-1,-8.275690749E-1,-8.71245876E-1,-8.20544064E-1,-7.622065246E-1,-7.289143726E-1,-7.782416977E-1,-8.497128636E-1,-8.177952617E-1,-7.339540422E-1,-6.243037693E-1,-5.288561527E-1,-4.44098644E-1,-3.387245331E-1,-2.318231687E-1,-1.661551967E-1,-1.881463658E-1,-2.706130557E-1,-3.720166944E-1,-4.247036967E-1,-4.03018035E-1,-3.428478586E-1,-2.689331993E-1,-2.687805016E-1,-3.149007978E-1,-3.396408241E-1,-3.880518451E-1,-4.276053309E-1,-4.404335134E-1,1.110857531E0">anyGyr</container>
+    <container size="1" init="4.84E2">count</container>
+    <container size="500" init="0E0,2.0653282E-2,4.130625E-2,6.1959063E-2,8.2612344E-2,1.03265625E-1,1.23918438E-1,1.44571407E-1,1.65224688E-1,1.85877969E-1,2.06530625E-1,2.2718375E-1,2.47837032E-1,2.68490157E-1,2.89142813E-1,3.09796094E-1,3.30449375E-1,3.51102344E-1,3.71755157E-1,3.92408438E-1,4.13061719E-1,4.33714532E-1,4.543675E-1,4.75020782E-1,4.95674063E-1,5.16326719E-1,5.36979844E-1,5.57633125E-1,5.7828625E-1,5.98938907E-1,6.19592188E-1,6.40245469E-1,6.60898438E-1,6.8155125E-1,7.02204532E-1,7.22857188E-1,7.43510313E-1,7.64163594E-1,7.84816719E-1,8.05469375E-1,8.26122657E-1,8.46775938E-1,8.67428907E-1,8.88081719E-1,9.08735E-1,9.29387657E-1,9.50040782E-1,9.70694063E-1,9.91347188E-1,1.011999844E0,1.032653125E0,1.053305938E0,1.073958907E0,1.094612188E0,1.115265469E0,1.135917969E0,1.15657125E0,1.177224219E0,1.197877032E0,1.218530313E0,1.239183594E0,1.259836094E0,1.280489375E0,1.3011425E0,1.321795157E0,1.342448438E0,1.36310125E0,1.383754219E0,1.4044075E0,1.42506E0,1.445713282E0,1.466366563E0,1.487019532E0,1.507672344E0,1.528325625E0,1.548978282E0,1.569631407E0,1.590284375E0,1.610937188E0,1.631590469E0,1.652243125E0,1.67289625E0,1.693549532E0,1.714202032E0,1.734855313E0,1.755508594E0,1.776161094E0,1.796814375E0,1.8174675E0,1.838120157E0,1.858773438E0,1.87942625E0,1.900079219E0,1.920732344E0,1.941385E0,1.962038282E0,1.982691094E0,2.003344063E0,2.023997188E0,2.044649844E0,2.065303125E0,2.085955938E0,2.106608907E0,2.127262032E0,2.147914688E0,2.168567969E0,2.189220782E0,2.20987375E0,2.230526875E0,2.251179532E0,2.271832813E0,2.292485313E0,2.313138594E0,2.333791719E0,2.354444375E0,2.375097657E0,2.395750157E0,2.416403438E0,2.437055938E0,2.457709219E0,2.478361875E0,2.499015E0,2.519668282E0,2.540320782E0,2.560974063E0,2.581626719E0,2.602279844E0,2.622932813E0,2.643585625E0,2.664238907E0,2.684891407E0,2.705544688E0,2.726197188E0,2.746850469E0,2.767502969E0,2.78815625E0,2.808809063E0,2.829462032E0,2.850115157E0,2.870767813E0,2.891421094E0,2.912073594E0,2.932726875E0,2.953379375E0,2.974032657E0,2.994685313E0,3.015338438E0,3.035991407E0,3.056644219E0,3.0772975E0,3.09795E0,3.118603282E0,3.139255782E0,3.159909063E0,3.180561563E0,3.201214844E0,3.221867344E0,3.242520625E0,3.263173125E0,3.283826407E0,3.304479063E0,3.325132188E0,3.345785157E0,3.366437969E0,3.387090469E0,3.40774375E0,3.428396563E0,3.449049532E0,3.469702657E0,3.490355313E0,3.511007969E0,3.531661094E0,3.552314063E0,3.572966875E0,3.593620157E0,3.614272657E0,3.634925469E0,3.655578438E0,3.676231563E0,3.696884219E0,3.7175375E0,3.73819E0,3.758842969E0,3.779495782E0,3.800149063E0,3.820801563E0,3.841454375E0,3.862107344E0,3.882760469E0,3.903413125E0,3.924065782E0,3.944718907E0,3.965371875E0,3.986024688E0,4.006677188E0,4.027330469E0,4.047982969E0,4.06863625E0,4.08928875E0,4.109942032E0,4.130594532E0,4.151247813E0,4.171900313E0,4.192553438E0,4.213206094E0,4.233859375E0,4.254511875E0,4.275164844E0,4.295817657E0,4.316470157E0,4.337123438E0,4.357775938E0,4.378429219E0,4.399081719E0,4.419735E0,4.4403875E0,4.461040782E0,4.481693282E0,4.502346407E0,4.522999063E0,4.543651719E0,4.564304844E0,4.584957344E0,4.605610625E0,4.626263125E0,4.646916407E0,4.667568907E0,4.688221875E0,4.708874688E0,4.729527188E0,4.750180469E0,4.770833282E0,4.79148625E0,4.81213875E0,4.832792032E0,4.853444532E0,4.874097344E0,4.894750313E0,4.915402813E0,4.936056094E0,4.956708594E0,4.977361875E0,4.998014375E0">autocorrelation_t</container>
+    <container size="500" init="3.030938489E0,2.965395236E0,2.791905889E0,2.567106954E0,2.357491487E0,2.2072261E0,2.122213855E0,2.072615537E0,2.009796177E0,1.887930029E0,1.682278165E0,1.397833312E0,1.064233998E0,7.21995616E-1,4.06137185E-1,1.344385837E-1,-9.490142357E-2,-2.974326929E-1,-4.937927075E-1,-7.024579706E-1,-9.34300756E-1,-1.191021474E0,-1.465195207E0,-1.740873243E0,-1.99692833E0,-2.210465693E0,-2.363300931E0,-2.450192032E0,-2.482336118E0,-2.485001126E0,-2.488122743E0,-2.512246444E0,-2.558958095E0,-2.609311872E0,-2.631821229E0,-2.597106054E0,-2.491414488E0,-2.322074101E0,-2.112718311E0,-1.892438991E0,-1.684210106E0,-1.496804387E0,-1.323124181E0,-1.145370618E0,-9.443251745E-1,-7.080944269E-1,-4.368950408E-1,-1.422699809E-1,1.579713388E-1,4.463702789E-1,7.1051891E-1,9.455670153E-1,1.154368341E0,1.345007317E0,1.527654354E0,1.710886992E0,1.897987163E0,2.085103825E0,2.261851817E0,2.414077423E0,2.527874631E0,2.594252214E0,2.612984446E0,2.593371538E0,2.55064315E0,2.499300463E0,2.446191203E0,2.387984256E0,2.313648117E0,2.209796205E0,2.067033266E0,1.883964239E0,1.668088512E0,1.4328599E0,1.192292305E0,9.562829227E-1,7.27605814E-1,5.021974399E-1,2.72372347E-1,3.140425413E-2,-2.23349482E-1,-4.893147701E-1,-7.588688321E-1,-1.021188032E0,-1.265501904E0,-1.484273982E0,-1.67495745E0,-1.83969411E0,-1.983570156E0,-2.112849063E0,-2.232566166E0,-2.343453299E0,-2.44095384E0,-2.516568559E0,-2.560933643E0,-2.567489276E0,-2.535415042E0,-2.46958802E0,-2.378533321E0,-2.271354817E0,-2.153996869E0,-2.026891294E0,-1.88570922E0,-1.723850398E0,-1.536241366E0,-1.322800337E0,-1.088478269E0,-8.408786958E-1,-5.879705304E-1,-3.358373423E-1,-8.7934567E-2,1.548224336E-1,3.936486795E-1,6.299233901E-1,8.639346705E-1,1.094333347E0,1.317822949E0,1.53054942E0,1.728157172E0,1.906241118E0,2.061346737E0,2.191318168E0,2.296255151E0,2.378039609E0,2.438658381E0,2.478965207E0,2.498310445E0,2.494642791E0,2.466182501E0,2.412141715E0,2.331837791E0,2.225017023E0,2.092625926E0,1.93735375E0,1.763746244E0,1.576782343E0,1.378860588E0,1.169636847E0,9.484724664E-1,7.161721681E-1,4.755437183E-1,2.301034904E-1,-1.79734918E-2,-2.672327011E-1,-5.152356647E-1,-7.580191542E-1,-9.911557099E-1,-1.211268593E0,-1.416890393E0,-1.607733758E0,-1.783432326E0,-1.943511615E0,-2.087110736E0,-2.212440049E0,-2.317263274E0,-2.399011118E0,-2.455404007E0,-2.485110614E0,-2.487551639E0,-2.463212999E0,-2.413545204E0,-2.340411262E0,-2.245761033E0,-2.131122171E0,-1.996984882E0,-1.842531698E0,-1.667283394E0,-1.472871761E0,-1.262660036E0,-1.040553192E0,-8.098050379E-1,-5.719719844E-1,-3.28845534E-1,-8.300169895E-2,1.629034688E-1,4.066650624E-1,6.470866443E-1,8.829522381E-1,1.111799694E0,1.329774069E0,1.532638257E0,1.717192714E0,1.882009469E0,2.026940371E0,2.151957256E0,2.256818729E0,2.340690943E0,2.402174502E0,2.440282557E0,2.453939852E0,2.44194259E0,2.403650244E0,2.339378999E0,2.250768078E0,2.141154808E0,2.013638572E0,1.869410576E0,1.708214934E0,1.529042101E0,1.331585133E0,1.117756151E0,8.913949803E-1,6.569926668E-1,4.182115941E-1,1.772733414E-1,-6.399550191E-2,-3.037300316E-1,-5.401752036E-1,-7.708147373E-1,-9.935015313E-1,-1.207311082E0,-1.410964183E0,-1.602084808E0,-1.777636887E0,-1.934541399E0,-2.070925541E0,-2.185935931E0,-2.278928066E0,-2.349012795E0,-2.395231151E0,-2.417101938E0,-2.415040944E0,-2.389731596E0,-2.341267962E0,-2.269291582E0,-2.17402512E0,-2.056360083E0,-1.917764203E0,-1.760161667E0,-1.585512761E0,-1.395460452E0,-1.191452661E0,-9.750977347E-1,-7.488977803E-1,-5.163408053E-1,-2.80233376E-1,-4.27130512E-2,1.952123245E-1,4.327665186E-1,6.686637145E-1,9.000416143E-1,1.122714661E0,1.33229639E0">autocorrelation</container>
+    <container init="">dt</container>
+    <container init="3.30449375E-1">t0</container>
+    <container init="">t1</container>
+    <container init="">t2</container>
+    <container size="500" init="">search_t</container>
+    <container size="500" init="">search_y</container>
+    <container init="1.280489375E0">periodEstimate</container>
+    <container size="20" static="true" init="1E0,2E0,3E0,4E0,5E0,6E0,7E0,8E0,9E0,1E1,1.1E1,1.2E1,1.3E1,1.4E1,1.5E1,1.6E1,1.7E1,1.8E1,1.9E1,2E1">factors</container>
+    <container size="20" init="">multiples</container>
+    <container init="">multipleFactor</container>
+    <container init="3.841468125E0">multiplePeriod</container>
+    <container init="">periodHalf</container>
+    <container init="">fineSearchMin</container>
+    <container init="">fineSearchMax</container>
+    <container size="500" init="">fineSearch</container>
+    <container size="500" init="">fineSearch_t</container>
+    <container init="">fineSearchResult</container>
+    <container size="1" init="1.301137708E0">period</container>
+    <container size="1" init="7.685581577E-1">frequency</container>
+    <container size="1" init="1.73936035E0">amplitudeSkewed</container>
+    <container size="1" init="2.26314734E0">amplitude</container>
+    <container size="1" init="-1.086960659E-1">avg</container>
+    <container size="0" init="1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.314906302E0,1.308021927E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.321790625E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.314906302E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.301137708E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.308021927E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0,1.301137708E0">periodhist</container>
+    <container size="0" init="7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.605104624E-1,7.645131776E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.565494724E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.605104624E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.685581577E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.645131776E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1,7.685581577E-1">frequencyhist</container>
+    <container size="0" init="2.668588034E0,2.668588034E0,2.668588034E0,2.671634935E0,2.67437343E0,2.662993919E0,2.651487028E0,2.667492386E0,2.667492386E0,2.668763398E0,2.669092902E0,2.682593562E0,2.681471171E0,2.679511602E0,2.679511602E0,2.679511602E0,2.676482131E0,2.67253718E0,2.67253718E0,2.667997272E0,2.667997272E0,2.658154971E0,2.658154971E0,2.653134873E0,2.648238906E0,2.648238906E0,2.64367614E0,2.639541737E0,2.639541737E0,2.622095153E0,2.61884848E0,2.61884848E0,2.616195995E0,2.616195995E0,2.613202774E0,2.613202774E0,2.612647803E0,2.612700637E0,2.612700637E0,2.613277548E0,2.61441953E0,2.602322716E0,2.602322716E0,2.60372688E0,2.60372688E0,2.605860686E0,2.605860686E0,2.620603274E0,2.620603274E0,2.620946875E0,2.620946875E0,2.620026904E0,2.61867417E0,2.616891216E0,2.616891216E0,2.614539937E0,2.611571154E0,2.611571154E0,2.611571154E0,2.603910323E0,2.603910323E0,2.599693692E0,2.595388495E0,2.591018178E0,2.591018178E0,2.586624821E0,2.586624821E0,2.582289959E0,2.578154618E0,2.574260382E0,2.574260382E0,2.57062148E0,2.567241694E0,2.567241694E0,2.564189747E0,2.56169701E0,2.55990707E0,2.558762178E0,2.558762178E0,2.558085225E0,2.557842008E0,2.557842008E0,2.558191997E0,2.559247652E0,2.560899057E0,2.562686646E0,2.550781596E0,2.550781596E0,2.551969634E0,2.553176075E0,2.554700385E0,2.554700385E0,2.556142726E0,2.57049157E0,2.570563489E0,2.570563489E0,2.569900921E0,2.568800311E0,2.568800311E0,2.567338296E0,2.565391101E0,2.562890602E0,2.559853942E0,2.559853942E0,2.556435002E0,2.552813083E0,2.552813083E0,2.549094582E0,2.549094582E0,2.541413438E0,2.537633511E0,2.537633511E0,2.534207305E0,2.531181121E0,2.531181121E0,2.528393457E0,2.525768329E0,2.510176817E0,2.510176817E0,2.510176817E0,2.508242863E0,2.506858184E0,2.505906844E0,2.505906844E0,2.504982767E0,2.504982767E0,2.505199272E0,2.506002706E0,2.507184527E0,2.508188008E0,2.508426691E0,2.507955243E0,2.507955243E0,2.507190336E0,2.506574377E0,2.506574377E0,2.506305487E0,2.505910894E0,2.505910894E0,2.505910894E0,2.504797141E0,2.502962374E0,2.500595742E0,2.497861104E0,2.494873561E0,2.494873561E0,2.494873561E0,2.491654815E0,2.488233018E0,2.484747001E0,2.484747001E0,2.481299499E0,2.477947398E0,2.47469209E0,2.47154998E0,2.47154998E0,2.468631116E0,2.466116805E0,2.46419869E0,2.46419869E0,2.462963777E0,2.462118909E0,2.461472569E0,2.461107255E0,2.461107255E0,2.461208002E0,2.461208002E0,2.463604557E0,2.463604557E0,2.465130396E0,2.466390445E0,2.467264413E0,2.467264413E0,2.467902299E0,2.468336507E0,2.468335975E0,2.468335975E0,2.467810752E0,2.466839434E0,2.466839434E0,2.465715781E0,2.464711653E0,2.464711653E0,2.463749496E0,2.463749496E0,2.460966832E0,2.460966832E0,2.455896133E0,2.455896133E0,2.44968188E0,2.44968188E0,2.446531273E0,2.443404722E0,2.440349806E0,2.4374648E0,2.434792364E0,2.434792364E0,2.43226923E0,2.429883036E0,2.429883036E0,2.427717353E0,2.427717353E0,2.424948664E0,2.424394676E0,2.424394676E0,2.423833215E0,2.422974011E0,2.42190759E0,2.420897235E0,2.420084183E0,2.420084183E0,2.419321601E0,2.405771943E0,2.417716101E0,2.417011544E0,2.417011544E0,2.416295832E0,2.416295832E0,2.415382671E0,2.414117998E0,2.412447837E0,2.410537263E0,2.408529345E0,2.408529345E0,2.406426992E0,2.40418453E0,2.401722307E0,2.401722307E0,2.399041434E0,2.396215629E0,2.393364813E0,2.387999246E0,2.385591714E0,2.385591714E0,2.383379045E0,2.383379045E0,2.381355358E0,2.379524955E0,2.379524955E0,2.377834023E0,2.376220753E0,2.376220753E0,2.374763519E0,2.361122221E0,2.360372662E0,2.360372662E0,2.360085694E0,2.360149592E0,2.36020317E0,2.36020317E0,2.360076356E0,2.359754557E0,2.35926316E0,2.358708984E0,2.358138658E0,2.358138658E0,2.357522619E0,2.357522619E0,2.356767643E0,2.355769742E0,2.354365317E0,2.352496096E0,2.352496096E0,2.347860929E0,2.347860929E0,2.345294553E0,2.342675832E0,2.340128391E0,2.340128391E0,2.337675711E0,2.335290353E0,2.332955107E0,2.330643344E0,2.330643344E0,2.328384443E0,2.326261641E0,2.324197252E0,2.322076996E0,2.319897388E0,2.317689233E0,2.317689233E0,2.315538711E0,2.313475145E0,2.311379607E0,2.311379607E0,2.306926177E0,2.306926177E0,2.304587707E0,2.302205146E0,2.299782297E0,2.297336701E0,2.294889172E0,2.294889172E0,2.292451942E0,2.290038526E0,2.287666978E0,2.285326858E0,2.282983491E0,2.282983491E0,2.280622378E0,2.280622378E0,2.278245753E0,2.273527783E0,2.273527783E0,2.27119471E0,2.27119471E0,2.268887919E0,2.266606398E0,2.264338161E0,2.26314734E0">amplitudehist</container>
+    <container size="1" init="">maxamplitude</container>
+    <container size="0" init="9.947791093E-1,9.947791093E-1,9.947791093E-1,9.959149133E-1,9.969357517E-1,9.926937707E-1,9.884043059E-1,9.943706806E-1,9.943706806E-1,9.948444804E-1,9.949673107E-1,1E0,9.99581602E-1,9.988511268E-1,9.988511268E-1,9.988511268E-1,9.977218198E-1,9.962512463E-1,9.962512463E-1,9.945588888E-1,9.945588888E-1,9.908899388E-1,9.908899388E-1,9.890185788E-1,9.871934919E-1,9.871934919E-1,9.854926132E-1,9.83951417E-1,9.83951417E-1,9.774477916E-1,9.762375177E-1,9.762375177E-1,9.752487414E-1,9.752487414E-1,9.741329475E-1,9.741329475E-1,9.739260693E-1,9.739457641E-1,9.739457641E-1,9.741608215E-1,9.745865222E-1,9.700771495E-1,9.700771495E-1,9.706005848E-1,9.706005848E-1,9.71396011E-1,9.71396011E-1,9.768916587E-1,9.768916587E-1,9.770197437E-1,9.770197437E-1,9.766768031E-1,9.761725394E-1,9.755079012E-1,9.755079012E-1,9.746314067E-1,9.735247227E-1,9.735247227E-1,9.735247227E-1,9.706689676E-1,9.706689676E-1,9.69097119E-1,9.674922551E-1,9.658631165E-1,9.658631165E-1,9.642253891E-1,9.642253891E-1,9.626094671E-1,9.610679211E-1,9.596162526E-1,9.596162526E-1,9.582597664E-1,9.569998715E-1,9.569998715E-1,9.558621863E-1,9.549329595E-1,9.542657172E-1,9.538389317E-1,9.538389317E-1,9.535865818E-1,9.53495917E-1,9.53495917E-1,9.536263834E-1,9.540199038E-1,9.546355039E-1,9.5530187E-1,9.508639816E-1,9.508639816E-1,9.513068511E-1,9.517565802E-1,9.523248029E-1,9.523248029E-1,9.528624694E-1,9.582113392E-1,9.582381488E-1,9.582381488E-1,9.57991161E-1,9.575808826E-1,9.575808826E-1,9.570358819E-1,9.563100192E-1,9.553778994E-1,9.542459125E-1,9.542459125E-1,9.529714221E-1,9.516212666E-1,9.516212666E-1,9.502351074E-1,9.502351074E-1,9.473717801E-1,9.45962723E-1,9.45962723E-1,9.44685524E-1,9.435574427E-1,9.435574427E-1,9.425182752E-1,9.415396968E-1,9.35727593E-1,9.35727593E-1,9.35727593E-1,9.350066662E-1,9.344904944E-1,9.341358597E-1,9.341358597E-1,9.337913884E-1,9.337913884E-1,9.338720958E-1,9.341715947E-1,9.346121462E-1,9.349862176E-1,9.350751921E-1,9.34899449E-1,9.34899449E-1,9.346143119E-1,9.343846986E-1,9.343846986E-1,9.342844636E-1,9.341373697E-1,9.341373697E-1,9.341373697E-1,9.337221919E-1,9.330382393E-1,9.321560215E-1,9.311366205E-1,9.300229435E-1,9.300229435E-1,9.300229435E-1,9.288230802E-1,9.275475245E-1,9.262480296E-1,9.262480296E-1,9.249628918E-1,9.237133172E-1,9.224998243E-1,9.213285287E-1,9.213285287E-1,9.202404533E-1,9.193031849E-1,9.185881621E-1,9.185881621E-1,9.18127819E-1,9.178128747E-1,9.175719363E-1,9.17435757E-1,9.17435757E-1,9.174733126E-1,9.174733126E-1,9.183666851E-1,9.183666851E-1,9.189354774E-1,9.194051903E-1,9.197309825E-1,9.197309825E-1,9.199687698E-1,9.201306309E-1,9.201304326E-1,9.201304326E-1,9.199346433E-1,9.195725618E-1,9.195725618E-1,9.191536935E-1,9.18779381E-1,9.18779381E-1,9.184207145E-1,9.184207145E-1,9.17383411E-1,9.17383411E-1,9.154931882E-1,9.154931882E-1,9.13176679E-1,9.13176679E-1,9.120022157E-1,9.108367202E-1,9.096979282E-1,9.086224742E-1,9.076262608E-1,9.076262608E-1,9.066857031E-1,9.05796193E-1,9.05796193E-1,9.049888837E-1,9.049888837E-1,9.039567896E-1,9.037502774E-1,9.037502774E-1,9.035409795E-1,9.032206911E-1,9.028231576E-1,9.024465237E-1,9.021434394E-1,9.021434394E-1,9.018591691E-1,8.968082146E-1,9.012606812E-1,9.009980408E-1,9.009980408E-1,9.007312424E-1,9.007312424E-1,9.003908402E-1,8.999194032E-1,8.992968116E-1,8.985846E-1,8.978361011E-1,8.978361011E-1,8.970523997E-1,8.962164691E-1,8.952986172E-1,8.952986172E-1,8.942992587E-1,8.932458734E-1,8.921831644E-1,8.901830228E-1,8.892855584E-1,8.892855584E-1,8.884607337E-1,8.884607337E-1,8.87706357E-1,8.870240311E-1,8.870240311E-1,8.863936962E-1,8.857923118E-1,8.857923118E-1,8.852490936E-1,8.801639779E-1,8.798845622E-1,8.798845622E-1,8.797775881E-1,8.798014076E-1,8.798213801E-1,8.798213801E-1,8.797741071E-1,8.796541489E-1,8.794709693E-1,8.79264387E-1,8.790517844E-1,8.790517844E-1,8.788221416E-1,8.788221416E-1,8.785407064E-1,8.781687151E-1,8.776451826E-1,8.769483867E-1,8.769483867E-1,8.752205188E-1,8.752205188E-1,8.742638415E-1,8.732876517E-1,8.72338033E-1,8.72338033E-1,8.714237387E-1,8.705345402E-1,8.69664022E-1,8.68802258E-1,8.68802258E-1,8.679601992E-1,8.67168875E-1,8.663993253E-1,8.656089496E-1,8.647964494E-1,8.639733076E-1,8.639733076E-1,8.631716498E-1,8.624024071E-1,8.616212458E-1,8.616212458E-1,8.599611246E-1,8.599611246E-1,8.590894049E-1,8.582012492E-1,8.572980749E-1,8.563864214E-1,8.554740472E-1,8.554740472E-1,8.545655125E-1,8.536658547E-1,8.527818042E-1,8.519094692E-1,8.510359242E-1,8.510359242E-1,8.501557635E-1,8.501557635E-1,8.492698204E-1,8.475110858E-1,8.475110858E-1,8.46641378E-1,8.46641378E-1,8.457814671E-1,8.449309767E-1,8.440854375E-1,8.436415311E-1">relamplitude</container>
+    <container size="0" init="">pi2f</container>
+    <container size="0" init="1.165958826E1">g</container>
+    <container init="5E-1">length</container>
+    <container init="4.206838089E-1">lengthcalc</container>
+  </data-containers>
+  <input>
+    <sensor type="gyroscope" rate="50">
+      <output component="x">gyrX</output>
+      <output component="y">gyrY</output>
+      <output component="z">gyrZ</output>
+      <output component="t">gyr_time</output>
+    </sensor>
+  </input>
+  <views>
+    <view label="Results">
+      <value label="Period" size="2" unit="[[unit_short_second]]">
+        <input>period</input>
+      </value>
+      <value label="Frequency" size="2" unit="[[unit_short_hertz]]">
+        <input>frequency</input>
+      </value>
+    </view>
+    <view label="[[quantity_short_earth_acceleration]]">
+      <value label="Period" size="2" unit="[[unit_short_second]]">
+        <input>period</input>
+      </value>
+      <value label="Frequency" size="2" unit="[[unit_short_hertz]]">
+        <input>frequency</input>
+      </value>
+      <edit label="Length" unit="[[unit_short_centi_meter]]" factor="100" default="0.5" signed="false" min="0.05" max="10">
+        <output>length</output>
+      </edit>
+      <value label="[[quantity_short_earth_acceleration]]" size="2" unit="[[unit_short_meter_per_square_second]]">
+        <input>g</input>
+      </value>
+      <separator height="1"/>
+      <info label="Here, you can enter the length of your pendulum (pivot point to center of mass) and determine the earth's acceleration g."/>
+    </view>
+    <view label="Length">
+      <value label="Period" size="2" unit="[[unit_short_second]]">
+        <input>period</input>
+      </value>
+      <value label="Frequency" size="2" unit="[[unit_short_hertz]]">
+        <input>frequency</input>
+      </value>
+      <value label="Length" size="2" unit="[[unit_short_centi_meter]]" factor="100">
+        <input>lengthcalc</input>
+      </value>
+      <separator height="1"/>
+      <info label="Here, you can determine the length of your pendulum (pivot point to center of mass) assuming g = 9.81 m/s²."/>
+    </view>
+    <view label="Resonance">
+      <graph label="Resonance" labelX="Frequency" unitX="[[unit_short_hertz]]" labelY="Rel. amplitude" unitY="[[unit_short_arbitrary_unit]]" style="dots">
+        <input axis="x">frequencyhist</input>
+        <input axis="y">relamplitude</input>
+      </graph>
+      <separator height="1"/>
+      <info label="On this tab, the amplitude is plotted against the detected frequency. You can use this to measure the resonance of a driven oscillator. The amplitude is normalized to a range from 0 to 1."/>
+    </view>
+    <view label="Autocorrelation">
+      <graph label="Autocorrelation" labelX="Δt" unitX="[[unit_short_second]]" labelY="correlation" unitY="[[unit_short_arbitrary_unit]]">
+        <input axis="x">autocorrelation_t</input>
+        <input axis="y">autocorrelation</input>
+      </graph>
+      <value label="Period" unit="[[unit_short_second]]">
+        <input>period</input>
+      </value>
+      <value label="Frequency" unit="[[unit_short_hertz]]">
+        <input>frequency</input>
+      </value>
+    </view>
+    <view label="Raw Data">
+      <graph label="Gyroscope x" labelX="[[quantity_short_time]]" unitX="[[unit_short_second]]" labelY="[[quantity_short_angular_velocity]]" unitY="[[unit_short_radian_per_second]]" unitYperX="rad/s²" partialUpdate="true">
+        <input axis="x">gyr_time</input>
+        <input axis="y">gyrX</input>
+      </graph>
+      <graph label="Gyroscope y" labelX="[[quantity_short_time]]" unitX="[[unit_short_second]]" labelY="[[quantity_short_angular_velocity]]" unitY="[[unit_short_radian_per_second]]" unitYperX="rad/s²" partialUpdate="true" color="ffff00">
+        <input axis="x">gyr_time</input>
+        <input axis="y">gyrY</input>
+      </graph>
+      <graph label="Gyroscope z" labelX="[[quantity_short_time]]" unitX="[[unit_short_second]]" labelY="[[quantity_short_angular_velocity]]" unitY="[[unit_short_radian_per_second]]" unitYperX="rad/s²" partialUpdate="true" color="ff6060">
+        <input axis="x">gyr_time</input>
+        <input axis="y">gyrZ</input>
+      </graph>
+    </view>
+  </views>
+  <analysis>
+    <add>
+      <input clear="false">gyrX</input>
+      <input clear="false">gyrY</input>
+      <input clear="false">gyrZ</input>
+      <output>anyGyr</output>
+      <!-- Since we want to keep a sign, but also want to allow using any axis, we simply look at the sum of all axes. This gives bad results if the phone is mounted at an angle, but usually the user will perform the experiment along a single axis -->
+    </add>
+    <autocorrelation>
+      <input as="x" clear="false">gyr_time</input>
+      <input as="y" clear="false">anyGyr</input>
+      <input as="minX" type="value">0</input>
+      <input as="maxX" type="value">5</input>
+      <output as="x">autocorrelation_t</output>
+      <output as="y">autocorrelation</output>
+    </autocorrelation>
+    <threshold falling="true">
+      <input as="x" clear="false">autocorrelation_t</input>
+      <input as="y" clear="false">autocorrelation</input>
+      <output>t0</output>
+    </threshold>
+    <multiply>
+      <input clear="false">t0</input>
+      <input type="value">2</input>
+      <output>dt</output>
+    </multiply>
+    <add>
+      <input clear="false">t0</input>
+      <input clear="false">dt</input>
+      <output>t1</output>
+    </add>
+    <add>
+      <input clear="false">t1</input>
+      <input>dt</input>
+      <output>t2</output>
+    </add>
+    <rangefilter>
+      <input clear="false">autocorrelation_t</input>
+      <input as="min">t1</input>
+      <input as="max">t2</input>
+      <input clear="false">autocorrelation</input>
+      <output>search_t</output>
+      <output>search_y</output>
+    </rangefilter>
+    <max>
+      <input as="y">search_y</input>
+      <input as="x">search_t</input>
+      <output as="position" clear="false">periodEstimate</output>
+    </max>
+    <ramp>
+      <input as="start" type="value">1</input>
+      <input as="stop" type="value">20</input>
+      <output>factors</output>
+    </ramp>
+    <multiply>
+      <input clear="false">periodEstimate</input>
+      <input clear="false">factors</input>
+      <output>multiples</output>
+    </multiply>
+    <rangefilter>
+      <input as="in">multiples</input>
+      <input as="max" type="value">4.5</input>
+      <input as="in">factors</input>
+      <output>multiplePeriod</output>
+      <output>multipleFactor</output>
+    </rangefilter>
+    <divide>
+      <input clear="false">periodEstimate</input>
+      <input type="value">2</input>
+      <output>periodHalf</output>
+    </divide>
+    <subtract>
+      <input clear="false">multiplePeriod</input>
+      <input clear="false">periodHalf</input>
+      <output>fineSearchMin</output>
+    </subtract>
+    <add>
+      <input clear="false">multiplePeriod</input>
+      <input>periodHalf</input>
+      <output>fineSearchMax</output>
+    </add>
+    <rangefilter>
+      <input as="in" clear="false">autocorrelation_t</input>
+      <input as="min">fineSearchMin</input>
+      <input as="max">fineSearchMax</input>
+      <input as="in" clear="false">autocorrelation</input>
+      <output>fineSearch_t</output>
+      <output>fineSearch</output>
+    </rangefilter>
+    <max>
+      <input as="y">fineSearch</input>
+      <input as="x">fineSearch_t</input>
+      <output as="position">fineSearchResult</output>
+    </max>
+    <divide>
+      <input>fineSearchResult</input>
+      <input>multipleFactor</input>
+      <output>period</output>
+    </divide>
+    <divide>
+      <input type="value">1</input>
+      <input clear="false">period</input>
+      <output>frequency</output>
+    </divide>
+    <multiply>
+      <input type="value">6.283185307</input>
+      <input clear="false">frequency</input>
+      <output>pi2f</output>
+    </multiply>
+    <multiply>
+      <input clear="false">pi2f</input>
+      <input clear="false">pi2f</input>
+      <input clear="false">length</input>
+      <output>g</output>
+    </multiply>
+    <divide>
+      <input type="value">9.81</input>
+      <input clear="false">pi2f</input>
+      <input>pi2f</input>
+      <output>lengthcalc</output>
+    </divide>
+    <average>
+      <input clear="false">anyGyr</input>
+      <output as="average" clear="false">avg</output>
+      <output as="stddev">amplitudeSkewed</output>
+    </average>
+    <divide>
+      <input clear="false">amplitudeSkewed</input>
+      <input clear="false">frequency</input>
+      <output>amplitude</output>
+    </divide>
+    <count>
+      <input clear="false">anyGyr</input>
+      <output>count</output>
+    </count>
+    <!-- only append to history if we already have enough data -->
+    <if less="true">
+      <input clear="false">count</input>
+      <input type="value">250</input>
+      <input as="false" clear="false">amplitude</input>
+      <output clear="false">amplitudehist</output>
+    </if>
+    <if less="true">
+      <input clear="false">count</input>
+      <input type="value">250</input>
+      <input as="false" clear="false">frequency</input>
+      <output clear="false">frequencyhist</output>
+    </if>
+    <if less="true">
+      <input clear="false">count</input>
+      <input type="value">250</input>
+      <input as="false" clear="false">period</input>
+      <output clear="false">periodhist</output>
+    </if>
+    <max>
+      <input as="y" clear="false">amplitudehist</input>
+      <output as="max">maxamplitude</output>
+    </max>
+    <divide>
+      <input clear="false">amplitudehist</input>
+      <input>maxamplitude</input>
+      <output>relamplitude</output>
+    </divide>
+  </analysis>
+  <export>
+    <set name="Raw Data">
+      <data name="Time (s)">gyr_time</data>
+      <data name="Rotation x (rad/s)">gyrX</data>
+      <data name="Rotation y (rad/s)">gyrY</data>
+      <data name="Rotation z (rad/s)">gyrZ</data>
+    </set>
+    <set name="Autocorrelation">
+      <data name="Time shift (s)">autocorrelation_t</data>
+      <data name="Autocorrelation of sum">autocorrelation</data>
+    </set>
+    <set name="Resonance">
+      <data name="Frequency (Hz)">frequencyhist</data>
+      <data name="Rel. amplitude (a.u.)">relamplitude</data>
+    </set>
+  </export>
+<state-title>Medición 27/07/26 12:55 p. m.</state-title><color>blue</color><events><start experimentTime="0.0" systemTime="1785170901062"/><pause experimentTime="10.056532913" systemTime="1785170911119"/></events></phyphox>
