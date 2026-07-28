@@ -1,8 +1,4 @@
 Datos exportados desde Phyphox 
 
-
-Excel 
-
-
-
-CVS 
+- Excel
+- CVS 
