@@ -27,10 +27,10 @@ En este laboratorio se busca analizar el comportamiento y describir el fenómeno
 - Video Explicativo
 
 ## Estado del proyecto 
-- [ ] Datos experimentales 
-- [ ] Código en Matlab 
-- [ ] Código en Python 
-- [ ] Graficas ( Matlab y Python )
+- [X] Datos experimentales 
+- [X] Código en Matlab 
+- [X] Código en Python 
+- [X] Graficas ( Matlab y Python )
 - [ ] Informe IEEE
 - [ ] Video Explicativo 
 
