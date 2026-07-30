@@ -127,8 +127,7 @@ for i = 1:length(maximos)
 
     etiqueta = sprintf('(%.2f s, %.2f)',tiempo_maximos(i), maximos(i));
 
-    text(tiempo_maximos(i), maximos(i), etiqueta, ...
-        'FontSize',9,'VerticalAlignment','bottom');
+    text(tiempo_maximos(i), maximos(i), etiqueta, 'FontSize',9,'VerticalAlignment','bottom');
 
 end
 
@@ -143,9 +142,7 @@ xlabel('Desplazamiento temporal (s)')
 
 ylabel('Autocorrelación')
 
-legend('Autocorrelación', ...
-    'Máximos encontrados', ...
-    'Location','northeast')
+legend('Autocorrelación', 'Máximos encontrados', 'Location','northeast')
 
 hold off
 
@@ -194,10 +191,7 @@ scatter(f_principal, amp_max,80,'filled')
 % Mostrar el valor de la frecuencia predominante
 texto = sprintf('f = %.4f Hz', f_principal);
 
-text(f_principal, amp_max, texto,...
-    'FontSize',10,...
-    'VerticalAlignment','bottom',...
-    'HorizontalAlignment','left');
+text(f_principal, amp_max, texto,'FontSize',10,'VerticalAlignment','bottom','HorizontalAlignment','left');
 
 grid on
 
@@ -207,9 +201,7 @@ xlabel('Frecuencia (Hz)')
 
 ylabel('Amplitud relativa (u.a.)')
 
-legend('Datos experimentales', ...
-    'Frecuencia principal', ...
-    'Location','northeast')
+legend('Datos experimentales',  'Frecuencia principal',  'Location','northeast')
 
 hold off
 
