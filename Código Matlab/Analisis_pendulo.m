@@ -26,13 +26,11 @@ rot_y = datos.RotationY_rad_s_;
 
 rot_z = datos.RotationZ_rad_s_;
 
-
-
 %% Velocidad angular en el eje X
 
 figure
 
-plot(tiempo,rot_x)
+plot(tiempo,rot_x,"b")
 
 grid on
 
@@ -41,7 +39,6 @@ title('Velocidad angular en el eje X')
 xlabel('Tiempo (s)')
 
 ylabel('Velocidad angular (rad/s)')
-
 
 %% Velocidad angular en el eje Y
 
@@ -71,8 +68,6 @@ xlabel('Tiempo (s)')
 
 ylabel('Velocidad angular (rad/s)')
 
-
-
 %% Comparación de las velocidades angulares
 
 figure
@@ -94,20 +89,51 @@ ylabel('Velocidad angular (rad/s)')
 
 legend('Rotation X','Rotation Y','Rotation Z')
 
-%% gRAFICA AUTOCORRELACION 
+
+%% GRÁFICA AUTOCORRELACIÓN
+
 auto.Properties.VariableNames
 
 %% Variables de autocorrelación
 
 tiempo_auto = auto.TimeShift_s_;
-
 auto_corr = auto.AutocorrelationOfSum;
+
+
+%% Buscar los máximos de la autocorrelación
+
+[maximos, indices] = findpeaks(auto_corr);
+
+% Obtener el tiempo correspondiente a cada máximo
+tiempo_maximos = tiempo_auto(indices);
+
 
 %% Gráfica de autocorrelación
 
 figure
 
-plot(tiempo_auto,auto_corr)
+% Graficar la autocorrelación
+plot(tiempo_auto, auto_corr,'LineWidth',1.5)
+
+hold on
+
+% Graficar los máximos encontrados
+plot(tiempo_maximos, maximos,'ro','MarkerSize',7,'MarkerFaceColor','r')
+
+
+%% Mostrar el valor de cada máximo en la gráfica
+
+for i = 1:length(maximos)
+
+    etiqueta = sprintf('(%.2f s, %.2f)',tiempo_maximos(i), maximos(i));
+
+    text(tiempo_maximos(i), maximos(i), etiqueta, ...
+        'FontSize',9,'VerticalAlignment','bottom');
+
+end
+
+
+%% Configuración de la gráfica
 
 grid on
 
@@ -117,15 +143,17 @@ xlabel('Desplazamiento temporal (s)')
 
 ylabel('Autocorrelación')
 
-%% Encontrar los máximos
+legend('Autocorrelación', ...
+    'Máximos encontrados', ...
+    'Location','northeast')
 
-[picos,indices] = findpeaks(auto_corr);
+hold off
 
-tiempos_maximos = tiempo_auto(indices)
+
 
 %% Cálculo del período
 
-periodos = diff(tiempos_maximos)
+periodos = diff(tiempo_maximos)
 
 periodo_promedio = mean(periodos)
 
@@ -133,15 +161,18 @@ periodo_promedio = mean(periodos)
 
 frecuencia_exp = 1/periodo_promedio
 
-%% Grafica Resonancia 
+
+
+
+%% Grafica Resonancia
+
 res.Properties.VariableNames
+
 
 %% Variables de resonancia
 
 frecuencia = res.Frequency_Hz_;
-
 amplitud = res.Rel_Amplitude_a_u__;
-
 
 
 %% Gráfica de la frecuencia predominante del péndulo
@@ -160,6 +191,14 @@ f_principal = frecuencia(indice);
 % Graficar la frecuencia principal
 scatter(f_principal, amp_max,80,'filled')
 
+% Mostrar el valor de la frecuencia predominante
+texto = sprintf('f = %.4f Hz', f_principal);
+
+text(f_principal, amp_max, texto,...
+    'FontSize',10,...
+    'VerticalAlignment','bottom',...
+    'HorizontalAlignment','left');
+
 grid on
 
 title('Frecuencia predominante del péndulo')
@@ -173,6 +212,7 @@ legend('Datos experimentales', ...
     'Location','northeast')
 
 hold off
+
 
 %% Frecuencia predominante
 
