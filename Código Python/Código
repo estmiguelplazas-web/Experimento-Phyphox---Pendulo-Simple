@@ -1,0 +1,231 @@
+import pandas as pd   # Leer archivo Excel
+import matplotlib.pyplot as plt  # Graficas
+import numpy as np  # Calculos
+
+## Verificar lectura archivo 
+
+archivo = "Pndulo 2026-07-27 12-50-50.xls"
+
+excel = pd.ExcelFile(archivo)
+
+print(excel.sheet_names)
+
+
+## Raw data 
+
+datos = pd.read_excel(archivo,sheet_name="Raw Data")
+## Primeros 5 datos 
+datos.head()
+
+## Cantidad total de datos 
+datos.shape
+
+##Verificar si existen datos faltantes
+datos.isnull().sum()
+
+
+##Datos 
+datos.describe()
+##Variables
+print(datos.columns)
+tiempo = datos['Time (s)']
+rot_x = datos['Rotation x (rad/s)']
+rot_y = datos['Rotation y (rad/s)']
+rot_z = datos['Rotation z (rad/s)']
+
+Grafica Velocidad Angular (Eje X)
+
+plt.figure(figsize=(10,5))
+
+plt.plot(tiempo, rot_x)
+
+plt.xlabel("Tiempo (s)")
+plt.ylabel("Velocidad angular (rad/s)")
+plt.title("Velocidad angular en el eje X")
+
+plt.grid()
+
+plt.show()
+
+##Grafica Velocidad Angular (Eje Y)
+plt.figure(figsize=(10,5))
+
+plt.plot(tiempo, rot_y,color='orange')
+
+plt.xlabel("Tiempo (s)")
+plt.ylabel("Velocidad angular (rad/s)")
+plt.title("Velocidad angular en el eje Y")
+
+plt.grid()
+
+plt.show()
+
+##Grafica Velocidad Angular (Eje Z)
+plt.figure(figsize=(10,5))
+
+plt.plot(tiempo, rot_z,color='green')
+
+plt.xlabel("Tiempo (s)")
+plt.ylabel("Velocidad angular (rad/s)")
+plt.title("Velocidad angular en el eje Z")
+
+plt.grid()
+
+plt.show()
+
+##Comparación de las velocidades angulares
+plt.figure(figsize=(12,6))
+
+plt.plot(tiempo, rot_x, label="Rotation X")
+plt.plot(tiempo, rot_y, label="Rotation Y")
+plt.plot(tiempo, rot_z, label="Rotation Z")
+
+plt.xlabel("Tiempo (s)")
+plt.ylabel("Velocidad angular (rad/s)")
+plt.title("Comparación de las velocidades angulares")
+
+plt.legend()
+plt.grid()
+
+plt.show()
+
+##Grafica Autocorrelation
+
+##leer archivo
+auto = pd.read_excel(archivo, sheet_name="Autocorrelation")
+print(auto.columns)
+auto.head()
+
+## Calulos y grafica
+
+# Leer la hoja Autocorrelation
+auto = pd.read_excel(archivo, sheet_name="Autocorrelation")
+
+# Crear las variables
+time_shift = auto["Time shift (s)"]
+autocorrelation = auto["Autocorrelation of sum"]
+
+# Buscar los máximos de la autocorrelación
+maximos, _ = find_peaks(autocorrelation)
+
+# Graficar
+plt.figure(figsize=(10,5))
+
+# Curva de autocorrelación
+plt.plot(time_shift, autocorrelation)
+
+# Graficar los máximos encontrados
+plt.scatter(time_shift[maximos],autocorrelation[maximos],color='red',label='Máximos encontrados')
+
+# Mostrar las coordenadas de cada máximo
+for i in maximos:
+    plt.text(time_shift[i],autocorrelation[i], f"({time_shift[i]:.2f} s, {autocorrelation[i]:.2f})",fontsize=8)
+
+# Configuración de la gráfica
+plt.xlabel("Desplazamiento temporal (s)")
+plt.ylabel("Autocorrelación")
+plt.title("Autocorrelación del movimiento del péndulo")
+
+plt.grid(True)
+plt.legend()
+
+plt.show()
+
+# Calculos
+# Períodos entre máximos
+tiempo_maximos = time_shift[maximos]
+periodos = np.diff(tiempo_maximos)
+
+print("Períodos encontrados:")
+print(periodos)
+
+
+periodo_promedio = np.mean(periodos)
+
+print(f"\nPeríodo promedio = {periodo_promedio:.4f} s")
+
+# Longitud_experimental
+
+g = 9.81
+longitud_experimental = (g*periodo_promedio**2)/(4*np.pi**2)
+
+print(f"Longitud experimental = {longitud_experimental:.4f} m")
+
+# Longitud real
+longitud_real = 0.412     
+
+# Error porcentual
+
+error_porcentual = abs(longitud_experimental - longitud_real)/longitud_real*100
+print(f"Error porcentual = {error_porcentual:.2f} %")
+
+
+## Grafica resonacia 
+
+# Leer la hoja Resonance
+res = pd.read_excel(archivo, sheet_name="Resonance")
+
+# Crear las variables
+frecuencia = res["Frequency (Hz)"]
+amplitud = res["Rel. amplitude (a.u.)"]
+
+# Encontrar la frecuencia predominante
+indice_max = amplitud.idxmax()
+
+frecuencia_principal = frecuencia[indice_max]
+amplitud_maxima = amplitud[indice_max]
+
+# Graficar
+plt.figure(figsize=(10,5))
+
+# Datos experimentales
+plt.scatter(frecuencia, amplitud,label="Datos experimentales")
+
+# Frecuencia predominante
+plt.scatter(frecuencia_principal, amplitud_maxima,label="Frecuencia principal")
+
+# Línea vertical en la frecuencia predominante
+plt.axvline(x=frecuencia_principal,linestyle="--", color="red")
+
+# Mostrar el valor de la frecuencia predominante
+plt.text(frecuencia_principal, amplitud_maxima,  f"f = {frecuencia_principal:.4f} Hz",fontsize=10)
+
+# Etiquetas y título
+plt.xlabel("Frecuencia (Hz)")
+plt.ylabel("Amplitud relativa (a.u.)")
+plt.title("Frecuencia predominante del péndulo")
+
+# Cuadrícula y leyenda
+plt.grid(True)
+plt.legend()
+
+plt.show()
+
+
+
+## Calulos Grafica resonacia 
+
+
+# Calculos
+# Período experimental
+
+periodo = 1 / frecuencia_principal
+
+print(f"Período experimental = {periodo:.4f} s")
+
+# Longitud_experimental
+g = 9.81
+
+longitud_experimental = (g * periodo**2)/(4*np.pi**2)
+
+print(f"Longitud experimental = {longitud_experimental:.4f} m")
+
+# Longitud real
+
+longitud_real = 0.412      
+
+# Error porcentual
+
+error_porcentual = (abs(longitud_experimental - longitud_real)/ longitud_real)*100
+
+print(f"Error porcentual = {error_porcentual:.2f} %")
