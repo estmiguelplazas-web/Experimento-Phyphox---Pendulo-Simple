@@ -142,7 +142,7 @@ xlabel('Desplazamiento temporal (s)')
 
 ylabel('Autocorrelación')
 
-legend('Autocorrelación', 'Máximos encontrados', 'Location','northeast')
+legend('Autocorrelación','Máximos encontrados', 'Location','northeast')
 
 hold off
 
@@ -201,7 +201,7 @@ xlabel('Frecuencia (Hz)')
 
 ylabel('Amplitud relativa (u.a.)')
 
-legend('Datos experimentales',  'Frecuencia principal',  'Location','northeast')
+legend('Datos experimentales','Frecuencia principal','Location','northeast')
 
 hold off
 
