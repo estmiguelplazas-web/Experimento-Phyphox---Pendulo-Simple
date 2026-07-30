@@ -26,6 +26,8 @@ rot_y = datos.RotationY_rad_s_;
 
 rot_z = datos.RotationZ_rad_s_;
 
+
+
 %% Velocidad angular en el eje X
 
 figure
@@ -40,11 +42,12 @@ xlabel('Tiempo (s)')
 
 ylabel('Velocidad angular (rad/s)')
 
+
 %% Velocidad angular en el eje Y
 
 figure
 
-plot(tiempo,rot_y)
+plot(tiempo,rot_y,'r')
 
 grid on
 
@@ -58,7 +61,7 @@ ylabel('Velocidad angular (rad/s)')
 
 figure
 
-plot(tiempo,rot_z)
+plot(tiempo,rot_z,"g")
 
 grid on
 
@@ -67,6 +70,8 @@ title('Velocidad angular en el eje Z')
 xlabel('Tiempo (s)')
 
 ylabel('Velocidad angular (rad/s)')
+
+
 
 %% Comparación de las velocidades angulares
 
@@ -139,19 +144,35 @@ amplitud = res.Rel_Amplitude_a_u__;
 
 
 
-%% Espectro de frecuencias
+%% Gráfica de la frecuencia predominante del péndulo
 
 figure
 
-plot(frecuencia,amplitud)
+% Datos experimentales
+scatter(frecuencia, amplitud,40,'filled')
+
+hold on
+
+% Buscar la frecuencia con mayor amplitud
+[amp_max, indice] = max(amplitud);
+f_principal = frecuencia(indice);
+
+% Graficar la frecuencia principal
+scatter(f_principal, amp_max,80,'filled')
 
 grid on
 
-title('Espectro de frecuencias del péndulo')
+title('Frecuencia predominante del péndulo')
 
 xlabel('Frecuencia (Hz)')
 
-ylabel('Amplitud relativa')
+ylabel('Amplitud relativa (u.a.)')
+
+legend('Datos experimentales', ...
+    'Frecuencia principal', ...
+    'Location','northeast')
+
+hold off
 
 %% Frecuencia predominante
 
