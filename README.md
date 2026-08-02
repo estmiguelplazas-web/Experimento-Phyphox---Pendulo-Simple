@@ -6,23 +6,23 @@
 - Mariana Alexandra Castro Higuera
 
 ## Descripción 
-En este laboratorio se busca analizar el comportamiento y describir el fenómeno que experimenta un péndulo simple, empleando recursos tecnológicos como la aplicación de Phyphox  determinando al mismo tiempo el papel que cumplen los sensores que los dispositivos móviles (Celulares) poseen para realizar dicha experimentación.
+En este laboratorio se busca analizar el comportamiento y describir el fenómeno que experimenta un péndulo simple, empleando recursos tecnológicos como la aplicación de Phyphox,  determinando al mismo tiempo el papel que cumplen los sensores que los dispositivos móviles (celulares) poseen para realizar dicha experimentación.
 
                                             
 ## Objetivos 
 - Obtener datos experimentales del movimiento oscilatorio
-- Analizar el comportamiento fisco del péndulo
-- Procesar los datos en formatos mas simples de compresión como Matlab y Python
+- Analizar el comportamiento físico del péndulo
+- Procesar los datos en formatos más simples de compresión como Matlab y Python
 - Documentar el desarrollo completo del laboratorio
 
 
 ## Contenido del repositorio
 - Informe IEEE
-- Datos Obtenido con Phyphox
+- Datos obtenidos con Phyphox
 - Código Matlab
 - Código Python
-- Graficas Matlab
-- Grafica Python
+- Gráficas Matlab
+- Gráfica Python
 - Fotografías del montaje
 - Video Explicativo
 
@@ -30,8 +30,8 @@ En este laboratorio se busca analizar el comportamiento y describir el fenómeno
 - [X] Datos experimentales 
 - [X] Código en Matlab 
 - [X] Código en Python 
-- [X] Graficas ( Matlab y Python )
-- [ ] Informe IEEE
-- [ ] Video Explicativo 
+- [X] Gráficas ( Matlab y Python )
+- [X] Informe IEEE
+- [X] Video Explicativo 
 
 
