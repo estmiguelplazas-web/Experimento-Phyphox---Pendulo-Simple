@@ -1,4 +1,4 @@
-%% ANALISIS DEL PENDULO SIMPLE CON PHYPHOX
+%% ANÁLISIS DEL PÉNDULO SIMPLE CON PHYPHOX
 
 clear
 clc
@@ -87,7 +87,7 @@ xlabel('Tiempo (s)')
 
 ylabel('Velocidad angular (rad/s)')
 
-legend('Rotation X','Rotation Y','Rotation Z')
+legend('Rotation X', 'Rotation Y',' Rotation Z')
 
 
 %% GRÁFICA AUTOCORRELACIÓN
@@ -191,7 +191,7 @@ scatter(f_principal, amp_max,80,'filled')
 % Mostrar el valor de la frecuencia predominante
 texto = sprintf('f = %.4f Hz', f_principal);
 
-text(f_principal, amp_max, texto,'FontSize',10,'VerticalAlignment','bottom','HorizontalAlignment','left');
+text(f_principal, amp_max, texto, 'FontSize',10, 'VerticalAlignment',' bottom', 'HorizontalAlignment', 'left');
 
 grid on
 
@@ -201,7 +201,7 @@ xlabel('Frecuencia (Hz)')
 
 ylabel('Amplitud relativa (u.a.)')
 
-legend('Datos experimentales','Frecuencia principal','Location','northeast')
+legend('Datos experimentales',' Frecuencia principal', 'Location', 'northeast')
 
 hold off
 
